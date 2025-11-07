@@ -107,20 +107,20 @@ nav:
       - Constants: c/7_constants.md
       - Operators: c/8_operators.md
       - Functions: c/9_functions.md
-      # - Scope and Lifetime: c/10_scope_and_lifetime.md
-      # - Control Statements: c/11_control_statements.md
-      # - If Statement: c/12_if_statement.md
-      # - Function Declarations: c/13_function_declarations.md
-      # - Type Conversions: c/14_type_conversions.md
-      # - Loop Statements: c/15_loop_statements.md
-      # - Ternary Operator: c/16_ternary_operator.md
-      # - Preprocessor Directives - 1: c/17_preprocessor_directives__1.md
-      # - Switch Statement: c/18_switch_statement.md
-      # - goto Statement: c/19_goto_statement.md
-      # - Random Number Generation and Control Statements: c/20_random_number_generation_and_control_statements.md
-      # - Arrays: c/21_arrays.md
-      # - Character Arrays and Strings: c/22_character_arrays_and_strings.md
-      # - sizeof Operator: c/23_sizeof_operator.md
+      - Scope and Lifetime: c/10_scope_and_lifetime.md
+      - Control Statements: c/11_control_statements.md
+      - If Statement: c/12_if_statement.md
+      - Function Declarations: c/13_function_declarations.md
+      - Type Conversions: c/14_type_conversions.md
+      - Loop Statements: c/15_loop_statements.md
+      - Ternary Operator: c/16_ternary_operator.md
+      - Preprocessor Directives - 1: c/17_preprocessor_directives__1.md
+      - Switch Statement: c/18_switch_statement.md
+      - goto Statement: c/19_goto_statement.md
+      - Random Number Generation and Control Statements: c/20_random_number_generation_and_control_statements.md
+      - Arrays: c/21_arrays.md
+      - Character Arrays and Strings: c/22_character_arrays_and_strings.md
+      - sizeof Operator: c/23_sizeof_operator.md
       # - Pointers: c/24_pointers.md
       # - Pointer Operators: c/25_pointer_operators.md
       # - Standard Functions for String Operations: c/26_standard_functions_for_string_operations.md
