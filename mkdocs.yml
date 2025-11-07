@@ -1,7 +1,6 @@
 site_name: "Burak's Notes"
 site_author: "Burak Rustemogullari"
-site_url: https://burakrustemogullari.github.io/
-repo_url: "https://github.com/burakrustemogullari/robotics-notes"
+site_url: https://burakrstem.github.io/docs/
 docs_dir: docs
 
 
