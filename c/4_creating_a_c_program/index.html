@@ -13,10 +13,6 @@
         <link rel="canonical" href="https://burakrstem.github.io/docs/c/4_creating_a_c_program/">
       
       
-        <link rel="prev" href="../3_general_concepts_and_terms/">
-      
-      
-        <link rel="next" href="../5_data_types/">
       
       
       <link rel="icon" href="../../assets/images/logo.png">
@@ -211,7 +207,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../docs/index.md" class="md-tabs__link">
         
   
   
@@ -228,13 +224,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../1_programming_and_c/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../docs/c/1_programming_and_c.md" class="md-tabs__link">
           
   
   
@@ -295,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../docs/index.md" class="md-nav__link">
         
   
   
@@ -314,10 +308,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -343,22 +335,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -371,7 +362,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             C
@@ -385,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1_programming_and_c/" class="md-nav__link">
+      <a href="../../docs/c/1_programming_and_c.md" class="md-nav__link">
         
   
   
@@ -408,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2_number_systems/" class="md-nav__link">
+      <a href="../../docs/c/2_number_systems.md" class="md-nav__link">
         
   
   
@@ -431,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3_general_concepts_and_terms/" class="md-nav__link">
+      <a href="../../docs/c/3_general_concepts_and_terms.md" class="md-nav__link">
         
   
   
@@ -451,32 +442,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Creating a C Program
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../docs/c/4_creating_a_c_program.md" class="md-nav__link">
         
   
   
@@ -487,221 +456,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-creating-the-source-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Creating the Source File
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-compilation-stage" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Compilation Stage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Compilation Stage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#compilation-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compilation Process
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#compile-time" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compile Time
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-object-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Object Files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-linker-program" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Linker Program
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Linker Program">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#result-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      Result Files
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-compiler-programs" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Compiler Programs
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Compiler Programs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-compilers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Compilers
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-ide-integrated-development-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. IDE (Integrated Development Environment)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-preprocessor" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Preprocessor
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-general-summary-of-the-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. General Summary of the Process
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-example-codes" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. Example codes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="9. Example codes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mainc-mathutilsc-mathutilsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      main.c mathutils.c mathutils.h
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#91object-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.1.Object files
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#92linkage" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.2.Linkage
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#93run" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.3.Run
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generate-object-files-link-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      Generate object files + link + run
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#glossary-of-terms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Glossary of Terms
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -714,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5_data_types/" class="md-nav__link">
+      <a href="../../docs/c/5_data_types.md" class="md-nav__link">
         
   
   
@@ -737,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../6_declarations_and_definitions/" class="md-nav__link">
+      <a href="../../docs/c/6_declarations_and_definitions.md" class="md-nav__link">
         
   
   
@@ -760,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../7_constants/" class="md-nav__link">
+      <a href="../../docs/c/7_constants.md" class="md-nav__link">
         
   
   
@@ -783,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../8_operators/" class="md-nav__link">
+      <a href="../../docs/c/8_operators.md" class="md-nav__link">
         
   
   
@@ -806,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../9_functions/" class="md-nav__link">
+      <a href="../../docs/c/9_functions.md" class="md-nav__link">
         
   
   
@@ -1231,44 +985,6 @@ At this stage, <strong>text-based operations</strong> are performed on the sourc
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../3_general_concepts_and_terms/" class="md-footer__link md-footer__link--prev" aria-label="Previous: General Concepts and Terms">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                General Concepts and Terms
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../5_data_types/" class="md-footer__link md-footer__link--next" aria-label="Next: Data Types">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Data Types
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
