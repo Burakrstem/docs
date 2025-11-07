@@ -1,0 +1,2313 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Burak Rustemogullari">
+      
+      
+        <link rel="canonical" href="https://burakrstem.github.io/docs/c/12_if_statement/">
+      
+      
+        <link rel="prev" href="../11_control_statements/">
+      
+      
+        <link rel="next" href="../13_function_declarations/">
+      
+      
+      <link rel="icon" href="../../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>If Statement - Burak's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-if-statement" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Burak&#39;s Notes" class="md-header__button md-logo" aria-label="Burak's Notes" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Burak's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              If Statement
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../1_programming_and_c/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  C
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Burak&#39;s Notes" class="md-nav__button md-logo" aria-label="Burak's Notes" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Burak's Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_programming_and_c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programming and C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_number_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Number Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_general_concepts_and_terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General Concepts and Terms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_creating_a_c_program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creating a C Program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6_declarations_and_definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Declarations and Definitions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7_constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Constants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8_operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_scope_and_lifetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scope and Lifetime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_control_statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control Statements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    If Statement
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    If Statement
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-if-statement-with-a-false-path-if-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      The if Statement with a False Path (if-else)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-assignment-operator-in-the-conditional-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Assignment Operator in the Conditional Expression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nested-if-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nested if Statements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-else-if-ladder" class="md-nav__link">
+    <span class="md-ellipsis">
+      The else if Ladder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-functions-predicate-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Functions (Predicate Functions)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-character-testing-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Character Testing Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Character Testing Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#islower-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      islower Function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isalpha-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      isalpha Function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isdigit-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      isdigit Function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isalnum-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      isalnum Function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isxdigit-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      isxdigit Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-character-conversion-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Character Conversion Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Character Conversion Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tolower-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      tolower Function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toupper-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      toupper Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_function_declarations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Declarations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_type_conversions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Type Conversions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_loop_statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Loop Statements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16_ternary_operator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ternary Operator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17_preprocessor_directives__1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preprocessor Directives - 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18_switch_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Switch Statement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19_goto_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    goto Statement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20_random_number_generation_and_control_statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Random Number Generation and Control Statements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21_arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arrays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22_character_arrays_and_strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Character Arrays and Strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23_sizeof_operator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    sizeof Operator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div><h1 id="the-if-statement">The <code>if</code> Statement<a class="headerlink" href="#the-if-statement" title="Permanent link">#</a></h1>
+<p>The most important statement for controlling program flow in the C language is the <code>if</code> statement.</p>
+<p>In its simplest form, the general syntax of the <code>if</code> statement is as follows:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="n">statement</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+The expression inside the <code>if</code> parenthesis is called the <strong>conditional expression</strong>.
+<p>The statement following the <code>if</code> parenthesis is called the <strong>true path</strong> of the <code>if</code> statement.</p>
+<p>The statement that forms the true path of the <code>if</code> statement can be a simple statement, a null statement, a compound statement, or another control statement.</p>
+<p>The execution of the simple <code>if</code> statement is as follows:
+First, the numerical value of the conditional expression is calculated. The calculated numerical value is interpreted as logical <strong>TRUE</strong> or <strong>FALSE</strong>. If the calculated value of the conditional expression is 0, it is interpreted as false; if it is any non-zero value, it is interpreted as true. For example, let's assume the calculated value of the conditional expression is <span class="arithmatex">\(-5\)</span>. In this case, the control expression is evaluated as true. If the expression is interpreted as <strong>TRUE</strong>, the true path of the <code>if</code> statement is executed; if the expression is interpreted as <strong>FALSE</strong>, the true path is not executed. The simple <code>if</code> statement is based on the execution or non-execution of a statement according to the truth or falsity of an expression.</p>
+<p>Compile and run the following program:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter a number : "</span><span class="p">);</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"the true path of the if statement!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>With the <code>if</code> statement written in the <code>main</code> function, the <code>printf</code> call is executed if the integer entered from the keyboard is greater than 10; otherwise, it is not executed.</p>
+<hr>
+<h2 id="the-if-statement-with-a-false-path-if-else">The <code>if</code> Statement with a False Path (<code>if-else</code>)<a class="headerlink" href="#the-if-statement-with-a-false-path-if-else" title="Permanent link">#</a></h2>
+<p>The <code>if</code> control statement can also include the <code>else</code> keyword. Such an <code>if</code> statement is called an <code>if</code> statement with a false path. The general form of the <code>if</code> statement with a false path is as follows:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="n">statement1</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">else</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="n">statement2</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>This time you see the <code>else</code> keyword after the statement following the true path of the <code>if</code> statement, followed by another statement. The <code>statement2</code> in the general form is called the <strong>false path</strong> of the <code>if</code> statement.</p>
+<p>The conditional expression of the <code>if</code> statement is interpreted as logically <strong>TRUE</strong> or <strong>FALSE</strong>. This time, if the conditional expression is <strong>TRUE</strong>, <code>statement1</code> is executed; if it is interpreted as <strong>FALSE</strong>, <code>statement2</code> is executed. The <code>if</code> statement with a false path aims at executing one of two separate statements depending on whether a conditional expression is true or false. That is, if the expression is true, one task is performed; if false, another task is performed.</p>
+<p>Examine the following example:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="p">{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter a character : "</span><span class="p">);</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">();</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'a'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'z'</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"%c is a lowercase letter!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">ch</span><span class="p">);</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="k">else</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"%c is not a lowercase letter!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">ch</span><span class="p">);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="p">}</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>In the <code>main</code> function above, a character is retrieved from the keyboard using the standard <code>getchar</code> function. The sequence number of the retrieved character is assigned to the variable named <code>ch</code>. Information on whether the character entered from the keyboard is a lowercase letter is printed to the screen, depending on whether the conditional expression is true or false. Let's look at the conditional expression:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'a'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'z'</span>
+</code></pre></div></td></tr></table></div>
+For this expression to be true, both terms of the <strong>"logical AND (<code>&amp;&amp;</code>)"</strong> operator must be true. This is only possible if the character <code>ch</code> is a lowercase letter character.
+<p>The true and/or false path of an <code>if</code> statement can be a <strong>compound statement</strong> (a block). In this case, more than one simple statement can be executed depending on whether the conditional expression is true or false. Examine the following example:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cm">/***/</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">func</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="p">}</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">func</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="p">}</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="cm">/***/</span>
+</code></pre></div></td></tr></table></div>
+<p>In the <code>if</code> statement above, the value of the <code>result</code> variable is calculated by different operations depending on whether the expression <span class="arithmatex">\(x &gt; 0\)</span> is true or false. Both the true and false paths of the <code>if</code> statement are formed by compound statements.</p>
+<p>An <code>if</code> statement does not have to have a false path. However, an <code>if</code> statement cannot have only an <code>else</code> part. In this case, a null statement or an empty compound statement must be placed in the true path of the <code>if</code> statement:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">        </span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="k">else</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">        </span><span class="n">statement1</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+or
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression</span><span class="p">)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">    </span><span class="k">else</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">        </span><span class="n">statement1</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+An <code>if</code> statement that only has a false path, with an empty true path, is not a good option in terms of readability. In such cases, a better technique is to take the logical inverse of the conditional expression and eliminate the false path of the <code>if</code> statement:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">expression</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="n">statement1</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+Examine the following code snippet:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="cm">/***/</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="p">;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="n">func1</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">    </span><span class="n">func2</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="p">}</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="cm">/***/</span>
+</code></pre></div></td></tr></table></div>
+<p>In the <code>if</code> statement above, if the value of the variable <span class="arithmatex">\(x\)</span> is greater than 5, nothing is done; otherwise, the functions <code>func1</code> and <code>func2</code> are called with the value of the variable <span class="arithmatex">\(x\)</span>. If the conditional expression is inverted and the <code>if</code> statement is rewritten:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="cm">/***/</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">    </span><span class="n">func1</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="n">func2</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="p">}</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="cm">/***/</span>
+</code></pre></div></td></tr></table></div>
+<p>Any expression conforming to the definition of an expression can be found inside the <code>if</code> parenthesis:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">    </span><span class="n">statement1</span><span class="p">;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">-1</span><span class="p">)</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">    </span><span class="n">statement2</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>The value of the conditional expressions above is always interpreted as true, because the expressions have a non-zero value.</p>
+<p>The following conditional expression, however, will always be interpreted as false, so the true path of the <code>if</code> statement will never be executed:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">    </span><span class="n">statement1</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>In the following <code>if</code> statement, <code>statement1</code> and <code>statement2</code> are executed depending on whether the value of the variable <span class="arithmatex">\(x\)</span> is non-zero or zero:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="n">statement1</span><span class="p">;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="n">statement2</span><span class="p">;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">    </span><span class="cm">/***/</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+The structure above is equivalent to the following structure:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">    </span><span class="n">statement1</span><span class="p">;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">    </span><span class="n">statement2</span><span class="p">;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Examine the following example:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">    </span><span class="n">statement1</span><span class="p">;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">    </span><span class="n">statement2</span><span class="p">;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>In this <code>if</code> statement, <code>statement1</code> and <code>statement2</code> are executed only if the value of the variable <span class="arithmatex">\(x\)</span> is 0.</p>
+<p>Again, the structure above is equivalent to the following structure:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">        </span><span class="n">statement1</span><span class="p">;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">        </span><span class="n">statement2</span><span class="p">;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="using-the-assignment-operator-in-the-conditional-expression">Using the Assignment Operator in the Conditional Expression<a class="headerlink" href="#using-the-assignment-operator-in-the-conditional-expression" title="Permanent link">#</a></h2>
+<p>The assignment operator is often used in the conditional expression of the <code>if</code> statement. Thus, the value produced by the assignment operator is utilized. Examine the following code snippet:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getval</span><span class="p">())</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="w">        </span><span class="n">func1</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="w">    </span><span class="k">else</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="w">        </span><span class="n">func2</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>In the conditional expression of the <code>if</code> statement, the return value of the called <code>getval</code> function is assigned to the variable <span class="arithmatex">\(x\)</span>. Recall that the value produced by the assignment operator is the value assigned to the object. You see that the expression formed by the assignment operator is enclosed in parentheses. In this case, the return value of the <code>getval</code> function is both assigned to the variable <span class="arithmatex">\(x\)</span> and checked whether it is greater than 5. If parentheses had not been used, the value 0 or 1 would have been assigned to <span class="arithmatex">\(x\)</span> depending on whether the return value of the <code>getval</code> function was greater than 5. In that case, either the <code>func1</code> function would be called with the value 1 or the <code>func2</code> function would be called with the value 0. The statement could have been written as follows, couldn't it?
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span>
+<span class="normal"><a href="#__codelineno-18-4">4</a></span>
+<span class="normal"><a href="#__codelineno-18-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getval</span><span class="p">();</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">    </span><span class="n">func1</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="k">else</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">    </span><span class="n">func2</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>However, the idiomatic code provides convenience in writing more complex statements. Consider how the following <code>if</code> statement will be executed. Recall that the pre-evaluation, or <strong>"short-circuiting,"</strong> behavior of the first part of the "logical AND" operator is guaranteed.
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getval</span><span class="p">())</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">isprime</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w">        </span><span class="n">func1</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">    </span><span class="n">func2</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="nested-if-statements">Nested <code>if</code> Statements<a class="headerlink" href="#nested-if-statements" title="Permanent link">#</a></h2>
+<p>The true or false path of an <code>if</code> statement can also be another <code>if</code> statement:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span>
+<span class="normal"><a href="#__codelineno-20-4">4</a></span>
+<span class="normal"><a href="#__codelineno-20-5">5</a></span>
+<span class="normal"><a href="#__codelineno-20-6">6</a></span>
+<span class="normal"><a href="#__codelineno-20-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression1</span><span class="p">)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">        </span><span class="n">statement1</span><span class="p">;</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">        </span><span class="n">statement2</span><span class="p">;</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="w">        </span><span class="n">statement3</span><span class="p">;</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="w">    </span><span class="n">statement4</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>In this example, the second <code>if</code> statement forms the true path of the first <code>if</code> statement. The first and second <code>if</code> statements do not have false paths.</p>
+<p>In nested <code>if</code> statements, the <code>else</code> keyword that follows the last <code>if</code> keyword belongs to the <strong>innermost</strong> <code>if</code> statement:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span>
+<span class="normal"><a href="#__codelineno-21-4">4</a></span>
+<span class="normal"><a href="#__codelineno-21-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression1</span><span class="p">)</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression2</span><span class="p">)</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">            </span><span class="n">statement1</span><span class="p">;</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">        </span><span class="k">else</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="w">            </span><span class="n">statement2</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+In the example above, even though the visual formatting might suggest the <code>else</code> part belongs to the first <code>if</code> statement, the <code>else</code> part belongs to the second, innermost <code>if</code> statement (<strong>dangling else</strong>).
+<p>If it is desired that the <code>else</code> keyword belongs to the first <code>if</code> statement, the true path of the first <code>if</code> statement must be blocked (enclosed in braces):
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span>
+<span class="normal"><a href="#__codelineno-22-5">5</a></span>
+<span class="normal"><a href="#__codelineno-22-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression2</span><span class="p">)</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="w">        </span><span class="n">statement1</span><span class="p">;</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="p">}</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="k">else</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">    </span><span class="n">statement2</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+In the example above, the <code>else</code> part belongs to the first <code>if</code> statement.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span>
+<span class="normal"><a href="#__codelineno-23-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression2</span><span class="p">)</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="w">        </span><span class="n">statement1</span><span class="p">;</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="w">        </span><span class="n">statement2</span><span class="p">;</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="w">        </span><span class="n">statement3</span><span class="p">;</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="w">    </span><span class="n">statement4</span><span class="p">;</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="p">}</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="k">else</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="w">    </span><span class="n">statement5</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+In the example above, since the true path of the first <code>if</code> statement consists of more than one statement—one of which is another <code>if</code> statement—blocking (braces) is used. <code>statement5</code> forms the false path of the first <code>if</code> statement.
+<hr>
+<h2 id="the-else-if-ladder">The <code>else if</code> Ladder<a class="headerlink" href="#the-else-if-ladder" title="Permanent link">#</a></h2>
+<p>Examine the following <code>if</code> statements:</p>
+<p>If the other comparisons are not true when a comparison results in true, such comparisons are called <strong>disjoint comparisons</strong>. In disjoint comparisons, using separate <code>if</code> statements is poor technique:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span>
+<span class="normal"><a href="#__codelineno-24-3">3</a></span>
+<span class="normal"><a href="#__codelineno-24-4">4</a></span>
+<span class="normal"><a href="#__codelineno-24-5">5</a></span>
+<span class="normal"><a href="#__codelineno-24-6">6</a></span>
+<span class="normal"><a href="#__codelineno-24-7">7</a></span>
+<span class="normal"><a href="#__codelineno-24-8">8</a></span>
+<span class="normal"><a href="#__codelineno-24-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"January</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"February</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"March</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="cm">/***/</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">12</span><span class="p">)</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"December</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+In the example above, suppose the value of the variable <span class="arithmatex">\(m\)</span> is 1. In this case, the text "January" is printed to the screen. However, the subsequent <code>if</code> statements separately test whether the variable <span class="arithmatex">\(m\)</span> is equal to 2, 3, ... 12 in turn. But since the variable <span class="arithmatex">\(x\)</span> has the value 1, it is clear that the control expressions within all other <code>if</code> statements will be evaluated as false. In this case, all <code>if</code> statements after the first <code>if</code> statement are unnecessarily executed. At the same time, the readability of the code is also impaired.
+<p>In disjoint comparisons, <strong><code>else if</code> ladders</strong> should be used:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-25-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-25-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-25-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-25-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-25-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-25-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-25-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-25-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-25-10">10</a></span>
+<span class="normal"><a href="#__codelineno-25-11">11</a></span>
+<span class="normal"><a href="#__codelineno-25-12">12</a></span>
+<span class="normal"><a href="#__codelineno-25-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression1</span><span class="p">)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="w">    </span><span class="n">statement1</span><span class="p">;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="k">else</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression2</span><span class="p">)</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="w">        </span><span class="n">statement2</span><span class="p">;</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="w">    </span><span class="k">else</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression3</span><span class="p">)</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8"></a><span class="w">            </span><span class="n">statement3</span><span class="p">;</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9"></a><span class="w">        </span><span class="k">else</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression4</span><span class="p">)</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11"></a><span class="w">                </span><span class="n">statement4</span><span class="p">;</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12"></a><span class="w">            </span><span class="k">else</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13"></a><span class="w">                </span><span class="n">statement5</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+In this structure, if the conditional expression of any <code>if</code> statement is evaluated as true, the program flow never proceeds to another <code>if</code> statement. This structure is called an <strong>else if ladder (cascaded if)</strong>. Since writing the <code>else if</code> ladder in the form above impairs readability, especially in long <code>else if</code> ladders, the following writing style should be preferred for readability:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-26-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-26-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-26-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-26-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-26-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-26-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-26-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-26-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-26-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression1</span><span class="p">)</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="w">    </span><span class="n">statement1</span><span class="p">;</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression2</span><span class="p">)</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="w">    </span><span class="n">statement2</span><span class="p">;</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression3</span><span class="p">)</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="w">    </span><span class="n">statement3</span><span class="p">;</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression4</span><span class="p">)</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="w">    </span><span class="n">statement4</span><span class="p">;</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9"></a><span class="k">else</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10"></a><span class="w">    </span><span class="n">statement5</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+The false path of the <code>if</code> statement at the very end of the ladder has a special importance. In the example above, <code>statement5</code> is in the <code>else</code> part of the last <code>if</code> statement. If the conditional expression of none of the <code>if</code> statements in the ladder is true, the false path of the last <code>if</code> statement is executed, right? As a result of the execution of the ladder above, one of <code>statement1</code>, <code>statement2</code>, <code>statement3</code>, <code>statement4</code>, or <code>statement5</code> is definitely executed.
+<p>An <code>else if</code> ladder without a false path for the last <code>if</code> statement can be exited without any action being performed.</p>
+<p>In terms of both readability and efficiency, conditions with higher probability or frequency in the <code>else if</code> ladder should be placed higher up.</p>
+<h2 id="common-mistakes">Common Mistakes<a class="headerlink" href="#common-mistakes" title="Permanent link">#</a></h2>
+<p>One common mistake, especially made by C beginners, is confusing the simple <code>if</code> statement with the <code>if</code> statement with a false path. That is, the false path of the <code>if</code> statement is forgotten:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-27-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-27-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-27-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-27-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-27-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-27-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-27-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-27-10">10</a></span>
+<span class="normal"><a href="#__codelineno-27-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="p">{</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter a number: "</span><span class="p">);</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d is an even number!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d is an odd number!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10"></a><span class="p">}</span>
+<a id="__codelineno-27-11" name="__codelineno-27-11"></a><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+If the expression inside the <code>if</code> parenthesis is false, there is no error. But what is printed to the screen if the expression is true? Suppose the value 28 is entered from the keyboard:
+<div class="codehilite"><pre><span></span><code>28 is an even number!
+28 is an odd number!
+</code></pre></div>
+
+<p>Perhaps the most common mistake is accidentally placing the terminating token (<code>;</code>) at the end of the <code>if</code> parenthesis. Examine the following <code>main</code> function:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-28-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-28-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-28-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-28-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-28-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-28-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-28-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-28-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-28-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="p">{</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter a number: "</span><span class="p">);</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d is an even number!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9"></a><span class="p">}</span>
+<a id="__codelineno-28-10" name="__codelineno-28-10"></a><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+In the <code>main</code> function above, the <code>printf</code> function is called regardless of whether the expression <span class="arithmatex">\(x \% 2 == 0\)</span> is true or false. The <code>printf</code> call is outside the <code>if</code> statement. It is absolutely compliant with the syntax rules for a null statement to form the true path of the <code>if</code> statement. The written <code>if</code> statement actually means <strong>"do nothing if x is even."</strong> Most compilers do not issue a logical warning message for this situation, which is unlikely to be written consciously.
+<p>If the same mistake were made in the true path of an <code>if</code> statement with a false path, a syntax error would occur, right?
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
+<span class="normal"><a href="#__codelineno-29-2">2</a></span>
+<span class="normal"><a href="#__codelineno-29-3">3</a></span>
+<span class="normal"><a href="#__codelineno-29-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"true!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="k">else</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"false</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+You know that the <code>else</code> keyword must be used in conjunction with an <code>if</code> statement. The <code>if</code> statement in the code snippet above is an <code>if</code> statement whose true path means "do nothing." Therefore, the <code>else</code> keyword is not attached to any <code>if</code> statement. This is a syntax error, because there cannot be an <code>else</code> that is not attached to an <code>if</code> statement.
+<p>Of course, a null statement can form the true or false path of an <code>if</code> statement. In this case, for readability, writing this null statement indented one tab gives a strong impression that the null statement was placed consciously.
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
+<span class="normal"><a href="#__codelineno-30-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getval</span><span class="p">())</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="w">    </span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+Another frequent mistake is using the <strong>assignment operator (<code>=</code>)</strong> instead of the <strong>comparison operator (<code>==</code>)</strong> inside the <code>if</code> parenthesis.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span>
+<span class="normal"><a href="#__codelineno-31-2">2</a></span>
+<span class="normal"><a href="#__codelineno-31-3">3</a></span>
+<span class="normal"><a href="#__codelineno-31-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="cm">/***/</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"equal</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="cm">/***/</span>
+</code></pre></div></td></tr></table></div>
+In the <code>if</code> statement above, the <code>printf</code> function is called if the value of the variable <span class="arithmatex">\(x\)</span> is equal to 5. The comparison operator has no side effect. That is, the value of the variable <span class="arithmatex">\(x\)</span> is only compared with the constant 5 inside the <code>if</code> parenthesis above; it is not changed. However, if the assignment operator is accidentally used instead of the comparison operator:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1">1</a></span>
+<span class="normal"><a href="#__codelineno-32-2">2</a></span>
+<span class="normal"><a href="#__codelineno-32-3">3</a></span>
+<span class="normal"><a href="#__codelineno-32-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="cm">/***/</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"equal</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="cm">/***/</span>
+</code></pre></div></td></tr></table></div>
+The assignment operator produces the value of the expression on its right side. The value of the expression inside the <code>if</code> parenthesis is calculated as 5. Since 5 is a non-zero value, the <code>printf</code> function is called regardless of the value of the variable <span class="arithmatex">\(x\)</span>. Since the assignment operator has a side effect, the value 5 is also assigned to the variable <span class="arithmatex">\(x\)</span> upon execution of the <code>if</code> statement.
+<p>Most C compilers view the situation with suspicion and issue a logical warning message if the expression inside the <code>if</code> parenthesis is a simple assignment expression. For example, a typical warning message in Borland compilers is:</p>
+<div class="codehilite"><pre><span></span><code>warning : possibly incorrect assignment!
+</code></pre></div>
+
+<p>However, the assignment operator can also be used consciously inside the <code>if</code> parenthesis:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1">1</a></span>
+<span class="normal"><a href="#__codelineno-33-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">func</span><span class="p">())</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+In conscious use, the expression can be structured as follows to suppress the compiler's logical warning message:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span>
+<span class="normal"><a href="#__codelineno-34-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">func</span><span class="p">())</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2"></a><span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+As in the example above, if the value produced by the assignment operator is explicitly made a term in a comparison operation, compilers do not issue a "logical warning" message in this case.
+<p>Another common mistake is forgetting to block the true or false path of the <code>if</code> statement. That is, a simple statement is accidentally written instead of a compound statement.
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span>
+<span class="normal"><a href="#__codelineno-35-2">2</a></span>
+<span class="normal"><a href="#__codelineno-35-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2"></a><span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3"></a><span class="w">    </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+In the <code>if</code> statement above, only the statement:
+<div class="codehilite"><pre><span></span><code>m = 12;
+</code></pre></div>
+
+<p>forms the true path of the <code>if</code> statement.</p>
+<div class="codehilite"><pre><span></span><code>k = 15;
+</code></pre></div>
+
+<p>is outside the <code>if</code> statement. This situation usually occurs because the programmer first creates the true or false path of the <code>if</code> statement with a simple statement, and then forgets to block when adding a second simple statement to the true or false path.</p>
+<p>It is also clear from the writing style of the code that the true path of the <code>if</code> statement was accidentally not blocked. The correct way should have been:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1">1</a></span>
+<span class="normal"><a href="#__codelineno-36-2">2</a></span>
+<span class="normal"><a href="#__codelineno-36-3">3</a></span>
+<span class="normal"><a href="#__codelineno-36-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3"></a><span class="w">        </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+The following <code>if</code> statement is invalid because it again uses an <code>else</code> keyword that is not matched with an <code>if</code> keyword:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1">1</a></span>
+<span class="normal"><a href="#__codelineno-37-2">2</a></span>
+<span class="normal"><a href="#__codelineno-37-3">3</a></span>
+<span class="normal"><a href="#__codelineno-37-4">4</a></span>
+<span class="normal"><a href="#__codelineno-37-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2"></a><span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3"></a><span class="w">    </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="cm">/* Invalid */</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5"></a><span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+Because you know that an <code>else</code> must be attached to an <code>if</code> statement.
+<p>To avoid such mistakes, some programmers write the simple statement as a compound statement, even if the true or false path of the <code>if</code> statement consists of a simple statement:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1">1</a></span>
+<span class="normal"><a href="#__codelineno-38-2">2</a></span>
+<span class="normal"><a href="#__codelineno-38-3">3</a></span>
+<span class="normal"><a href="#__codelineno-38-4">4</a></span>
+<span class="normal"><a href="#__codelineno-38-5">5</a></span>
+<span class="normal"><a href="#__codelineno-38-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2"></a><span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<a id="__codelineno-38-3" name="__codelineno-38-3"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-38-5" name="__codelineno-38-5"></a><span class="w">        </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<a id="__codelineno-38-6" name="__codelineno-38-6"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+In the example above, no syntax error or mistake occurs if another simple statement is added to the true or false path of the <code>if</code> statement. However, avoiding unnecessary blocking is better for readability.
+<p>Consider the case where it is desired to test if a value is within a certain range inside the <code>if</code> parenthesis:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1">1</a></span>
+<span class="normal"><a href="#__codelineno-39-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2"></a><span class="w">        </span><span class="n">func</span><span class="p">();</span>
+</code></pre></div></td></tr></table></div>
+In the <code>if</code> statement above, it is intended to call the <code>func</code> function if the variable <span class="arithmatex">\(x\)</span> is between the values 10 and 20. However, the expression inside the <code>if</code> parenthesis is always true. That is, the <code>func</code> function call is always executed. Since the less-than operator (<code>&lt;</code>) has left-to-right associativity, the leftmost less-than operator is evaluated first. You know that the value produced by the operator is 1 or 0. The produced value of 1 or 0 becomes the operand of the rightmost less-than operator. Since the value 20 is greater than 1 or 0, the expression is always true.
+<p>Another dangerous mistake is forgetting the function call operator (parentheses) when the expression inside the <code>if</code> parenthesis is a function call expression:</p>
+<p>Instead of:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1">1</a></span>
+<span class="normal"><a href="#__codelineno-40-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">func</span><span class="p">())</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2"></a><span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+Suppose:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1">1</a></span>
+<span class="normal"><a href="#__codelineno-41-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2"></a><span class="w">        </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+is written. This does not result in a syntax error. In this case, the true path of the <code>if</code> statement is always executed. In the C language, a function name is treated as an address information equivalent to the function's code location in memory. Since this address information is always a non-zero value, the conditional expression is always evaluated as true.
+<h2 id="testing-functions-predicate-functions">Testing Functions (Predicate Functions)<a class="headerlink" href="#testing-functions-predicate-functions" title="Permanent link">#</a></h2>
+<p>Since the <code>bool</code> data type is not one of C's native data types (historically), testing functions, i.e., functions that answer a question, written in the C language often return the <code>int</code> type.</p>
+<blockquote>
+<p>[The <code>bool</code> type was also added as a native data type with C99 standards. According to C99 standards, the <code>_Bool</code> keyword was added to the C language.]</p>
+</blockquote>
+<p>For example, let's assume a function is written to test whether an integer is a prime number. The function's signature would be:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">isprime</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+The widely used convention for the return values of testing functions is as follows: If the function answers the question posed as true or positive, it returns any non-zero value. If the result of the question or test is negative or false, the function returns the value 0. This simplifies the job of the code snippet calling the testing function, allowing idiomatic code to be written like this:
+<p>If a task is to be performed when the test result is positive:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-43-1">1</a></span>
+<span class="normal"><a href="#__codelineno-43-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isprime</span><span class="p">(</span><span class="n">val</span><span class="p">))</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2"></a><span class="w">        </span><span class="n">statement</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+If a task is to be performed when the test result is negative:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-44-1">1</a></span>
+<span class="normal"><a href="#__codelineno-44-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isprime</span><span class="p">(</span><span class="n">val</span><span class="p">))</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2"></a><span class="w">        </span><span class="n">statement</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+can be written.
+<p>Examine the following program:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-45-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-45-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-45-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-45-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-45-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-45-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-45-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-45-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-45-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-45-10">10</a></span>
+<span class="normal"><a href="#__codelineno-45-11">11</a></span>
+<span class="normal"><a href="#__codelineno-45-12">12</a></span>
+<span class="normal"><a href="#__codelineno-45-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctype.h&gt;</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-45-4" name="__codelineno-45-4"></a><span class="p">{</span>
+<a id="__codelineno-45-5" name="__codelineno-45-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span>
+<a id="__codelineno-45-6" name="__codelineno-45-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter a character : "</span><span class="p">);</span>
+<a id="__codelineno-45-7" name="__codelineno-45-7"></a><span class="w">    </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">();</span>
+<a id="__codelineno-45-8" name="__codelineno-45-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isupper</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span>
+<a id="__codelineno-45-9" name="__codelineno-45-9"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"%c is an uppercase letter!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">ch</span><span class="p">);</span>
+<a id="__codelineno-45-10" name="__codelineno-45-10"></a><span class="w">    </span><span class="k">else</span>
+<a id="__codelineno-45-11" name="__codelineno-45-11"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"%c is not an uppercase letter!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">ch</span><span class="p">);</span>
+<a id="__codelineno-45-12" name="__codelineno-45-12"></a><span class="p">}</span>
+<a id="__codelineno-45-13" name="__codelineno-45-13"></a><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<code>isupper</code> is a standard function that tests whether the character whose code number is passed to it is an uppercase letter character. If the character whose code number is passed is an uppercase letter, the function returns a non-zero value. If it is not an uppercase letter, the function's return value is 0. In this case, the conditional expression of the <code>if</code> statement in the <code>main</code> function means "if ch is an uppercase letter," right? If the conditional expression were written as:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-46-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isupper</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+this would mean "if ch is not an uppercase letter."
+<p>Below, a function named <code>isleap</code> is defined, which tests whether a year is a leap year. Years that are exactly divisible by 4, but not by 100, or that are exactly divisible by 400, are leap years:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-47-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-47-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-47-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-47-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-47-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-47-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-47-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-47-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-47-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-47-10">10</a></span>
+<span class="normal"><a href="#__codelineno-47-11">11</a></span>
+<span class="normal"><a href="#__codelineno-47-12">12</a></span>
+<span class="normal"><a href="#__codelineno-47-13">13</a></span>
+<span class="normal"><a href="#__codelineno-47-14">14</a></span>
+<span class="normal"><a href="#__codelineno-47-15">15</a></span>
+<span class="normal"><a href="#__codelineno-47-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-47-2" name="__codelineno-47-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">isleap</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-47-3" name="__codelineno-47-3"></a><span class="p">{</span>
+<a id="__codelineno-47-4" name="__codelineno-47-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-47-5" name="__codelineno-47-5"></a><span class="p">}</span>
+<a id="__codelineno-47-6" name="__codelineno-47-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-47-7" name="__codelineno-47-7"></a><span class="p">{</span>
+<a id="__codelineno-47-8" name="__codelineno-47-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">year</span><span class="p">;</span>
+<a id="__codelineno-47-9" name="__codelineno-47-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter a year: "</span><span class="p">);</span>
+<a id="__codelineno-47-10" name="__codelineno-47-10"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">year</span><span class="p">);</span>
+<a id="__codelineno-47-11" name="__codelineno-47-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isleap</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
+<a id="__codelineno-47-12" name="__codelineno-47-12"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d is a leap year!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="p">);</span>
+<a id="__codelineno-47-13" name="__codelineno-47-13"></a><span class="w">    </span><span class="k">else</span>
+<a id="__codelineno-47-14" name="__codelineno-47-14"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d is not a leap year!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="p">);</span>
+<a id="__codelineno-47-15" name="__codelineno-47-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-47-16" name="__codelineno-47-16"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="standard-character-testing-functions">Standard Character Testing Functions<a class="headerlink" href="#standard-character-testing-functions" title="Permanent link">#</a></h2>
+<p>Character testing functions are functions that allow information about characters to be obtained. In most compilers, these functions are also defined as macros within the <code>ctype.h</code> header file. Therefore, the <code>ctype.h</code> file must be included in the source code before character testing functions are called. Character testing functions are valid for the first half of the ASCII character set. That is, their return values are not reliable when used for Turkish characters. Correctly running character testing functions for Turkish-specific characters (<code>ç</code>, <code>ğ</code>, <code>ı</code>, <code>ö</code>, <code>ş</code>, <code>ü</code>, <code>Ç</code>, <code>Ğ</code>, <code>I</code>, <code>Ö</code>, <code>Ş</code>, <code>Ü</code>) is a matter of <strong>localization</strong>. This topic will be addressed in later sections.</p>
+<p>Below is a table listing the standard character testing functions:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Return Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>isalpha</code></td>
+<td style="text-align: left;">True if an alphabetic character, false otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>isupper</code></td>
+<td style="text-align: left;">True if an uppercase letter, false otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>islower</code></td>
+<td style="text-align: left;">True if a lowercase letter, false otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>isdigit</code></td>
+<td style="text-align: left;">True if a digit character, false otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>isxdigit</code></td>
+<td style="text-align: left;">True if a character representing one of the hexadecimal digits (0123456789ABCDEFabcdef), false otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>isalnum</code></td>
+<td style="text-align: left;">True if an alphabetic or digit character, false otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>isspace</code></td>
+<td style="text-align: left;">True if one of the whitespace characters (space, carriage return, new line, vertical tab, form feed), false otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ispunct</code></td>
+<td style="text-align: left;">True if one of the punctuation characters, i.e., a character outside of control characters, alphanumeric characters, and whitespace characters, false otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>isprint</code></td>
+<td style="text-align: left;">True if a printable character (including the space character), false otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>isgraph</code></td>
+<td style="text-align: left;">True if a visible character (excluding the space character), false otherwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>iscntrl</code></td>
+<td style="text-align: left;">True if a control character or delete character (first 32 characters of ASCII set or character number 127), false otherwise.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="islower-function"><code>islower</code> Function<a class="headerlink" href="#islower-function" title="Permanent link">#</a></h3>
+<p><code>islower</code> is a standard function that tests whether the character whose code number is passed to it is a lowercase letter character. If the character is a lowercase letter, the function returns a non-zero value, i.e., a logical "true" value. If it is not a lowercase letter, the function's return value is zero. This function can be written as follows:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-48-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-48-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-48-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-48-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-48-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-48-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-48-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-48-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-48-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-48-10">10</a></span>
+<span class="normal"><a href="#__codelineno-48-11">11</a></span>
+<span class="normal"><a href="#__codelineno-48-12">12</a></span>
+<span class="normal"><a href="#__codelineno-48-13">13</a></span>
+<span class="normal"><a href="#__codelineno-48-14">14</a></span>
+<span class="normal"><a href="#__codelineno-48-15">15</a></span>
+<span class="normal"><a href="#__codelineno-48-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-48-2" name="__codelineno-48-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">islower</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">)</span>
+<a id="__codelineno-48-3" name="__codelineno-48-3"></a><span class="p">{</span>
+<a id="__codelineno-48-4" name="__codelineno-48-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'a'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'z'</span><span class="p">;</span>
+<a id="__codelineno-48-5" name="__codelineno-48-5"></a><span class="p">}</span>
+<a id="__codelineno-48-6" name="__codelineno-48-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-48-7" name="__codelineno-48-7"></a><span class="p">{</span>
+<a id="__codelineno-48-8" name="__codelineno-48-8"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span>
+<a id="__codelineno-48-9" name="__codelineno-48-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter a character: "</span><span class="p">);</span>
+<a id="__codelineno-48-10" name="__codelineno-48-10"></a><span class="w">    </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">();</span>
+<a id="__codelineno-48-11" name="__codelineno-48-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">islower</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span>
+<a id="__codelineno-48-12" name="__codelineno-48-12"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"lowercase letter</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-48-13" name="__codelineno-48-13"></a><span class="w">    </span><span class="k">else</span>
+<a id="__codelineno-48-14" name="__codelineno-48-14"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"not a lowercase letter</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-48-15" name="__codelineno-48-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-48-16" name="__codelineno-48-16"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>In the <code>islower</code> function written above, it is first tested whether the parameter variable is a lowercase letter:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-49-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1"></a><span class="w">    </span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'a'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'z'</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+In a character code where lowercase letters are placed consecutively, the value of the expression above is true only if the value of the variable <code>ch</code> is the sequence number of a lowercase letter.
+<h3 id="isalpha-function"><code>isalpha</code> Function<a class="headerlink" href="#isalpha-function" title="Permanent link">#</a></h3>
+<p><code>isalpha</code> is also a standard function. If the character whose code number is passed to its parameter is an alphabetic character, i.e., an uppercase or lowercase letter, the function returns a non-zero value; if it is not an alphabetic character, it returns a zero value.
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-50-1">1</a></span>
+<span class="normal"><a href="#__codelineno-50-2">2</a></span>
+<span class="normal"><a href="#__codelineno-50-3">3</a></span>
+<span class="normal"><a href="#__codelineno-50-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">isalpha</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">)</span>
+<a id="__codelineno-50-2" name="__codelineno-50-2"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-50-3" name="__codelineno-50-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'a'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'z'</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'A'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'Z'</span><span class="p">);</span>
+<a id="__codelineno-50-4" name="__codelineno-50-4"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="isdigit-function"><code>isdigit</code> Function<a class="headerlink" href="#isdigit-function" title="Permanent link">#</a></h3>
+<p><code>isdigit</code> is a standard function. If the character whose code number is passed to its parameter is a digit character, the function returns a non-zero value; if it is not a digit character, it returns a zero value:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-51-1">1</a></span>
+<span class="normal"><a href="#__codelineno-51-2">2</a></span>
+<span class="normal"><a href="#__codelineno-51-3">3</a></span>
+<span class="normal"><a href="#__codelineno-51-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">isdigit</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">)</span>
+<a id="__codelineno-51-2" name="__codelineno-51-2"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-51-3" name="__codelineno-51-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'0'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'9'</span><span class="p">);</span>
+<a id="__codelineno-51-4" name="__codelineno-51-4"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="isalnum-function"><code>isalnum</code> Function<a class="headerlink" href="#isalnum-function" title="Permanent link">#</a></h3>
+<p><code>isalnum</code> is also a standard function. If the character whose code number is passed to its parameter is an alphabetic character or a digit character, it returns a non-zero value; otherwise, it returns a zero value. This function is written in two separate forms below:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-52-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-52-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-52-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-52-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-52-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-52-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-52-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-52-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-52-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-52-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctype.h&gt;</span>
+<a id="__codelineno-52-2" name="__codelineno-52-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">isalnum1</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">)</span>
+<a id="__codelineno-52-3" name="__codelineno-52-3"></a><span class="p">{</span>
+<a id="__codelineno-52-4" name="__codelineno-52-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'a'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'z'</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'A'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'Z'</span>
+<a id="__codelineno-52-5" name="__codelineno-52-5"></a><span class="w">        </span><span class="o">||</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'0'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'9'</span><span class="p">;</span>
+<a id="__codelineno-52-6" name="__codelineno-52-6"></a><span class="p">}</span>
+<a id="__codelineno-52-7" name="__codelineno-52-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">isalnum2</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">)</span>
+<a id="__codelineno-52-8" name="__codelineno-52-8"></a><span class="p">{</span>
+<a id="__codelineno-52-9" name="__codelineno-52-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">isalpha</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">isdigit</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
+<a id="__codelineno-52-10" name="__codelineno-52-10"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="isxdigit-function"><code>isxdigit</code> Function<a class="headerlink" href="#isxdigit-function" title="Permanent link">#</a></h3>
+<p><code>isxdigit</code> is a standard function that tests whether a character is a symbol for a digit in the hexadecimal number system. If the character is one of <code>0123456789ABCDEFabcdef</code>, the function returns a non-zero value; if it is not one of these characters, it returns a zero value.
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-53-1">1</a></span>
+<span class="normal"><a href="#__codelineno-53-2">2</a></span>
+<span class="normal"><a href="#__codelineno-53-3">3</a></span>
+<span class="normal"><a href="#__codelineno-53-4">4</a></span>
+<span class="normal"><a href="#__codelineno-53-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">isxdigit</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">)</span>
+<a id="__codelineno-53-2" name="__codelineno-53-2"></a><span class="p">{</span>
+<a id="__codelineno-53-3" name="__codelineno-53-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'0'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'9'</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'A'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'F'</span>
+<a id="__codelineno-53-4" name="__codelineno-53-4"></a><span class="w">        </span><span class="o">||</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'a'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'f'</span><span class="p">;</span>
+<a id="__codelineno-53-5" name="__codelineno-53-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="standard-character-conversion-functions">Standard Character Conversion Functions<a class="headerlink" href="#standard-character-conversion-functions" title="Permanent link">#</a></h2>
+<p>Converting from lowercase to uppercase or from uppercase to lowercase is a frequently needed operation. The standard <code>toupper</code> and <code>tolower</code> functions are used for this purpose.</p>
+<h3 id="tolower-function"><code>tolower</code> Function<a class="headerlink" href="#tolower-function" title="Permanent link">#</a></h3>
+<p><code>tolower</code> is a standard C function. If the character whose code number is passed to its parameter is an uppercase letter, it returns the code number of its lowercase counterpart. If the code number of a non-uppercase character is passed to the <code>tolower</code> function, the function returns the same value. This function is defined below:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-54-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-54-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-54-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-54-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-54-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-54-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-54-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-54-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-54-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-54-10">10</a></span>
+<span class="normal"><a href="#__codelineno-54-11">11</a></span>
+<span class="normal"><a href="#__codelineno-54-12">12</a></span>
+<span class="normal"><a href="#__codelineno-54-13">13</a></span>
+<span class="normal"><a href="#__codelineno-54-14">14</a></span>
+<span class="normal"><a href="#__codelineno-54-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-54-2" name="__codelineno-54-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">tolower</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">)</span>
+<a id="__codelineno-54-3" name="__codelineno-54-3"></a><span class="p">{</span>
+<a id="__codelineno-54-4" name="__codelineno-54-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'A'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'Z'</span><span class="p">)</span>
+<a id="__codelineno-54-5" name="__codelineno-54-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">'A'</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">'a'</span><span class="p">;</span>
+<a id="__codelineno-54-6" name="__codelineno-54-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span>
+<a id="__codelineno-54-7" name="__codelineno-54-7"></a><span class="p">}</span>
+<a id="__codelineno-54-8" name="__codelineno-54-8"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-54-9" name="__codelineno-54-9"></a><span class="p">{</span>
+<a id="__codelineno-54-10" name="__codelineno-54-10"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span>
+<a id="__codelineno-54-11" name="__codelineno-54-11"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter a character :"</span><span class="p">);</span>
+<a id="__codelineno-54-12" name="__codelineno-54-12"></a><span class="w">    </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">();</span>
+<a id="__codelineno-54-13" name="__codelineno-54-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">tolower</span><span class="p">(</span><span class="n">ch</span><span class="p">));</span>
+<a id="__codelineno-54-14" name="__codelineno-54-14"></a><span class="p">}</span>
+<a id="__codelineno-54-15" name="__codelineno-54-15"></a><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="toupper-function"><code>toupper</code> Function<a class="headerlink" href="#toupper-function" title="Permanent link">#</a></h3>
+<p><code>toupper</code> is a standard C function. If the character whose sequence number is passed to its parameter is a lowercase letter, it returns the sequence number of its uppercase counterpart. If the sequence number of a non-lowercase character is passed to the <code>toupper</code> function, the function returns the same value. The function is defined below:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-55-1">1</a></span>
+<span class="normal"><a href="#__codelineno-55-2">2</a></span>
+<span class="normal"><a href="#__codelineno-55-3">3</a></span>
+<span class="normal"><a href="#__codelineno-55-4">4</a></span>
+<span class="normal"><a href="#__codelineno-55-5">5</a></span>
+<span class="normal"><a href="#__codelineno-55-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">toupper</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">)</span>
+<a id="__codelineno-55-2" name="__codelineno-55-2"></a><span class="p">{</span>
+<a id="__codelineno-55-3" name="__codelineno-55-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'a'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'z'</span><span class="p">)</span>
+<a id="__codelineno-55-4" name="__codelineno-55-4"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">'a'</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">'A'</span><span class="p">;</span>
+<a id="__codelineno-55-5" name="__codelineno-55-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ch</span><span class="p">;</span>
+<a id="__codelineno-55-6" name="__codelineno-55-6"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h2>
+<p>Below are the functions <code>get_max2</code>, which returns the larger of two numbers, and <code>get_max3</code>, which returns the largest of three numbers:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-56-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-56-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-56-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-56-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-56-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-56-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-56-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-56-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-56-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-56-10">10</a></span>
+<span class="normal"><a href="#__codelineno-56-11">11</a></span>
+<span class="normal"><a href="#__codelineno-56-12">12</a></span>
+<span class="normal"><a href="#__codelineno-56-13">13</a></span>
+<span class="normal"><a href="#__codelineno-56-14">14</a></span>
+<span class="normal"><a href="#__codelineno-56-15">15</a></span>
+<span class="normal"><a href="#__codelineno-56-16">16</a></span>
+<span class="normal"><a href="#__codelineno-56-17">17</a></span>
+<span class="normal"><a href="#__codelineno-56-18">18</a></span>
+<span class="normal"><a href="#__codelineno-56-19">19</a></span>
+<span class="normal"><a href="#__codelineno-56-20">20</a></span>
+<span class="normal"><a href="#__codelineno-56-21">21</a></span>
+<span class="normal"><a href="#__codelineno-56-22">22</a></span>
+<span class="normal"><a href="#__codelineno-56-23">23</a></span>
+<span class="normal"><a href="#__codelineno-56-24">24</a></span>
+<span class="normal"><a href="#__codelineno-56-25">25</a></span>
+<span class="normal"><a href="#__codelineno-56-26">26</a></span>
+<span class="normal"><a href="#__codelineno-56-27">27</a></span>
+<span class="normal"><a href="#__codelineno-56-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">get_max2</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-56-2" name="__codelineno-56-2"></a><span class="p">{</span>
+<a id="__codelineno-56-3" name="__codelineno-56-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-56-4" name="__codelineno-56-4"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-56-5" name="__codelineno-56-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-56-6" name="__codelineno-56-6"></a><span class="p">}</span>
+<a id="__codelineno-56-7" name="__codelineno-56-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">get_max3</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
+<a id="__codelineno-56-8" name="__codelineno-56-8"></a><span class="p">{</span>
+<a id="__codelineno-56-9" name="__codelineno-56-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-56-10" name="__codelineno-56-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">max</span><span class="p">)</span>
+<a id="__codelineno-56-11" name="__codelineno-56-11"></a><span class="w">        </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-56-12" name="__codelineno-56-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">max</span><span class="p">)</span>
+<a id="__codelineno-56-13" name="__codelineno-56-13"></a><span class="w">        </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<a id="__codelineno-56-14" name="__codelineno-56-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">max</span><span class="p">;</span>
+<a id="__codelineno-56-15" name="__codelineno-56-15"></a><span class="p">}</span>
+<a id="__codelineno-56-16" name="__codelineno-56-16"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-56-17" name="__codelineno-56-17"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-56-18" name="__codelineno-56-18"></a><span class="p">{</span>
+<a id="__codelineno-56-19" name="__codelineno-56-19"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">;</span>
+<a id="__codelineno-56-20" name="__codelineno-56-20"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter two numbers : "</span><span class="p">);</span>
+<a id="__codelineno-56-21" name="__codelineno-56-21"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d%d"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-56-22" name="__codelineno-56-22"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"the larger of %d and %d is = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">get_max2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">));</span>
+<a id="__codelineno-56-23" name="__codelineno-56-23"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter three numbers : "</span><span class="p">);</span>
+<a id="__codelineno-56-24" name="__codelineno-56-24"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d%d%d"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">z</span><span class="p">);</span>
+<a id="__codelineno-56-25" name="__codelineno-56-25"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"the largest of %d %d and %d is = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">,</span>
+<a id="__codelineno-56-26" name="__codelineno-56-26"></a><span class="w">        </span><span class="n">get_max3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">));</span>
+<a id="__codelineno-56-27" name="__codelineno-56-27"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-56-28" name="__codelineno-56-28"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+The following program defines a function named <code>get_hex_char</code>. The function returns the sequence number of the character symbol in the hexadecimal number system for an integer between 0 and 15 passed to it.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-57-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-57-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-57-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-57-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-57-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-57-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-57-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-57-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-57-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-57-10">10</a></span>
+<span class="normal"><a href="#__codelineno-57-11">11</a></span>
+<span class="normal"><a href="#__codelineno-57-12">12</a></span>
+<span class="normal"><a href="#__codelineno-57-13">13</a></span>
+<span class="normal"><a href="#__codelineno-57-14">14</a></span>
+<span class="normal"><a href="#__codelineno-57-15">15</a></span>
+<span class="normal"><a href="#__codelineno-57-16">16</a></span>
+<span class="normal"><a href="#__codelineno-57-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-57-2" name="__codelineno-57-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">get_hex_char</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">)</span>
+<a id="__codelineno-57-3" name="__codelineno-57-3"></a><span class="p">{</span>
+<a id="__codelineno-57-4" name="__codelineno-57-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span>
+<a id="__codelineno-57-5" name="__codelineno-57-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="sc">'0'</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number</span><span class="p">);</span>
+<a id="__codelineno-57-6" name="__codelineno-57-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">15</span><span class="p">)</span>
+<a id="__codelineno-57-7" name="__codelineno-57-7"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="sc">'A'</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<a id="__codelineno-57-8" name="__codelineno-57-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<a id="__codelineno-57-9" name="__codelineno-57-9"></a><span class="p">}</span>
+<a id="__codelineno-57-10" name="__codelineno-57-10"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-57-11" name="__codelineno-57-11"></a><span class="p">{</span>
+<a id="__codelineno-57-12" name="__codelineno-57-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+<a id="__codelineno-57-13" name="__codelineno-57-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter a number between 0 and 15 : "</span><span class="p">);</span>
+<a id="__codelineno-57-14" name="__codelineno-57-14"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">number</span><span class="p">);</span>
+<a id="__codelineno-57-15" name="__codelineno-57-15"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d = %c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">get_hex_char</span><span class="p">(</span><span class="n">number</span><span class="p">));</span>
+<a id="__codelineno-57-16" name="__codelineno-57-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-57-17" name="__codelineno-57-17"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>The following program defines a function named <code>get_hex_val</code>. The function returns the value in the decimal number system of a hexadecimal digit symbol whose code number is passed to it. If the character passed to the function is not a hexadecimal character, the value -1 is returned.
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-58-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-58-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-58-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-58-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-58-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-58-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-58-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-58-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-58-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-58-10">10</a></span>
+<span class="normal"><a href="#__codelineno-58-11">11</a></span>
+<span class="normal"><a href="#__codelineno-58-12">12</a></span>
+<span class="normal"><a href="#__codelineno-58-13">13</a></span>
+<span class="normal"><a href="#__codelineno-58-14">14</a></span>
+<span class="normal"><a href="#__codelineno-58-15">15</a></span>
+<span class="normal"><a href="#__codelineno-58-16">16</a></span>
+<span class="normal"><a href="#__codelineno-58-17">17</a></span>
+<span class="normal"><a href="#__codelineno-58-18">18</a></span>
+<span class="normal"><a href="#__codelineno-58-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-58-2" name="__codelineno-58-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctype.h&gt;</span>
+<a id="__codelineno-58-3" name="__codelineno-58-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">get_hex_val</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">)</span>
+<a id="__codelineno-58-4" name="__codelineno-58-4"></a><span class="p">{</span>
+<a id="__codelineno-58-5" name="__codelineno-58-5"></a><span class="w">    </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toupper</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
+<a id="__codelineno-58-6" name="__codelineno-58-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span>
+<a id="__codelineno-58-7" name="__codelineno-58-7"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">'0'</span><span class="p">;</span>
+<a id="__codelineno-58-8" name="__codelineno-58-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ch</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="sc">'A'</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">'F'</span><span class="p">)</span>
+<a id="__codelineno-58-9" name="__codelineno-58-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">'A'</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<a id="__codelineno-58-10" name="__codelineno-58-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<a id="__codelineno-58-11" name="__codelineno-58-11"></a><span class="p">}</span>
+<a id="__codelineno-58-12" name="__codelineno-58-12"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-58-13" name="__codelineno-58-13"></a><span class="p">{</span>
+<a id="__codelineno-58-14" name="__codelineno-58-14"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">hex</span><span class="p">;</span>
+<a id="__codelineno-58-15" name="__codelineno-58-15"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter a character showing a hex digit: "</span><span class="p">);</span>
+<a id="__codelineno-58-16" name="__codelineno-58-16"></a><span class="w">    </span><span class="n">hex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">();</span>
+<a id="__codelineno-58-17" name="__codelineno-58-17"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%c = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">hex</span><span class="p">,</span><span class="w"> </span><span class="n">get_hex_val</span><span class="p">(</span><span class="n">hex</span><span class="p">));</span>
+<a id="__codelineno-58-18" name="__codelineno-58-18"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-58-19" name="__codelineno-58-19"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>The following program defines a function named <code>change_case</code>. If the character passed to the <code>change_case</code> function is a lowercase letter, it converts this character to an uppercase letter; if it is an uppercase letter, it converts the character to a lowercase letter. If it is not an alphabetic character, the function returns the character's own value.
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-59-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-59-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-59-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-59-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-59-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-59-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-59-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-59-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-59-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-59-10">10</a></span>
+<span class="normal"><a href="#__codelineno-59-11">11</a></span>
+<span class="normal"><a href="#__codelineno-59-12">12</a></span>
+<span class="normal"><a href="#__codelineno-59-13">13</a></span>
+<span class="normal"><a href="#__codelineno-59-14">14</a></span>
+<span class="normal"><a href="#__codelineno-59-15">15</a></span>
+<span class="normal"><a href="#__codelineno-59-16">16</a></span>
+<span class="normal"><a href="#__codelineno-59-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-59-2" name="__codelineno-59-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctype.h&gt;</span>
+<a id="__codelineno-59-3" name="__codelineno-59-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">change_case</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ch</span><span class="p">)</span>
+<a id="__codelineno-59-4" name="__codelineno-59-4"></a><span class="p">{</span>
+<a id="__codelineno-59-5" name="__codelineno-59-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isupper</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span>
+<a id="__codelineno-59-6" name="__codelineno-59-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">tolower</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
+<a id="__codelineno-59-7" name="__codelineno-59-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">toupper</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
+<a id="__codelineno-59-8" name="__codelineno-59-8"></a><span class="p">}</span>
+<a id="__codelineno-59-9" name="__codelineno-59-9"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-59-10" name="__codelineno-59-10"></a><span class="p">{</span>
+<a id="__codelineno-59-11" name="__codelineno-59-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<a id="__codelineno-59-12" name="__codelineno-59-12"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter a character : "</span><span class="p">);</span>
+<a id="__codelineno-59-13" name="__codelineno-59-13"></a><span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">();</span>
+<a id="__codelineno-59-14" name="__codelineno-59-14"></a><span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">change_case</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<a id="__codelineno-59-15" name="__codelineno-59-15"></a><span class="w">    </span><span class="n">putchar</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<a id="__codelineno-59-16" name="__codelineno-59-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-59-17" name="__codelineno-59-17"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>The following C program solves a quadratic equation whose coefficients are obtained from the keyboard:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-60-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-60-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-60-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-60-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-60-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-60-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-60-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-60-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-60-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-60-10">10</a></span>
+<span class="normal"><a href="#__codelineno-60-11">11</a></span>
+<span class="normal"><a href="#__codelineno-60-12">12</a></span>
+<span class="normal"><a href="#__codelineno-60-13">13</a></span>
+<span class="normal"><a href="#__codelineno-60-14">14</a></span>
+<span class="normal"><a href="#__codelineno-60-15">15</a></span>
+<span class="normal"><a href="#__codelineno-60-16">16</a></span>
+<span class="normal"><a href="#__codelineno-60-17">17</a></span>
+<span class="normal"><a href="#__codelineno-60-18">18</a></span>
+<span class="normal"><a href="#__codelineno-60-19">19</a></span>
+<span class="normal"><a href="#__codelineno-60-20">20</a></span>
+<span class="normal"><a href="#__codelineno-60-21">21</a></span>
+<span class="normal"><a href="#__codelineno-60-22">22</a></span>
+<span class="normal"><a href="#__codelineno-60-23">23</a></span>
+<span class="normal"><a href="#__codelineno-60-24">24</a></span>
+<span class="normal"><a href="#__codelineno-60-25">25</a></span>
+<span class="normal"><a href="#__codelineno-60-26">26</a></span>
+<span class="normal"><a href="#__codelineno-60-27">27</a></span>
+<span class="normal"><a href="#__codelineno-60-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-60-2" name="__codelineno-60-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+<a id="__codelineno-60-3" name="__codelineno-60-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-60-4" name="__codelineno-60-4"></a><span class="p">{</span>
+<a id="__codelineno-60-5" name="__codelineno-60-5"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<a id="__codelineno-60-6" name="__codelineno-60-6"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">delta</span><span class="p">;</span>
+<a id="__codelineno-60-7" name="__codelineno-60-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"enter the coefficients of the equation</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-60-8" name="__codelineno-60-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"a = "</span><span class="p">);</span>
+<a id="__codelineno-60-9" name="__codelineno-60-9"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">"%lf"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+<a id="__codelineno-60-10" name="__codelineno-60-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"b = "</span><span class="p">);</span>
+<a id="__codelineno-60-11" name="__codelineno-60-11"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">"%lf"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+<a id="__codelineno-60-12" name="__codelineno-60-12"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"c = "</span><span class="p">);</span>
+<a id="__codelineno-60-13" name="__codelineno-60-13"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">"%lf"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+<a id="__codelineno-60-14" name="__codelineno-60-14"></a><span class="w">    </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<a id="__codelineno-60-15" name="__codelineno-60-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">delta</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-60-16" name="__codelineno-60-16"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"your equation has no real root</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-60-17" name="__codelineno-60-17"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">delta</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-60-18" name="__codelineno-60-18"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"your equation has one real root</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-60-19" name="__codelineno-60-19"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"root = %lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">));</span>
+<a id="__codelineno-60-20" name="__codelineno-60-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-60-21" name="__codelineno-60-21"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-60-22" name="__codelineno-60-22"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">kokdelta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">delta</span><span class="p">);</span>
+<a id="__codelineno-60-23" name="__codelineno-60-23"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"your equation has 2 real roots</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<a id="__codelineno-60-24" name="__codelineno-60-24"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"root 1 = %lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">kokdelta</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">));</span>
+<a id="__codelineno-60-25" name="__codelineno-60-25"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"root 2 = %lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">kokdelta</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">));</span>
+<a id="__codelineno-60-26" name="__codelineno-60-26"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-60-27" name="__codelineno-60-27"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-60-28" name="__codelineno-60-28"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../11_control_statements/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Control Statements">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Control Statements
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../13_function_declarations/" class="md-footer__link md-footer__link--next" aria-label="Next: Function Declarations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Function Declarations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.highlight", "search.share", "content.tabs.link", "toc.integrate", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

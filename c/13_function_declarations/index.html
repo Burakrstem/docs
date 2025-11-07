@@ -1,0 +1,1444 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Burak Rustemogullari">
+      
+      
+        <link rel="canonical" href="https://burakrstem.github.io/docs/c/13_function_declarations/">
+      
+      
+        <link rel="prev" href="../12_if_statement/">
+      
+      
+        <link rel="next" href="../14_type_conversions/">
+      
+      
+      <link rel="icon" href="../../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Function Declarations - Burak's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#function-declarations-prototypes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Burak&#39;s Notes" class="md-header__button md-logo" aria-label="Burak's Notes" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Burak's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Function Declarations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../1_programming_and_c/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  C
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Burak&#39;s Notes" class="md-nav__button md-logo" aria-label="Burak's Notes" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Burak's Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_programming_and_c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programming and C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_number_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Number Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_general_concepts_and_terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General Concepts and Terms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_creating_a_c_program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creating a C Program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6_declarations_and_definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Declarations and Definitions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7_constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Constants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8_operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_scope_and_lifetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scope and Lifetime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_control_statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control Statements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_if_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    If Statement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Function Declarations
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Declarations
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-function-declaration" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Function Declaration?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is a Function Declaration?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-form-of-function-declarations" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Form of Function Declarations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omitting-parameter-types-in-a-declaration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Omitting Parameter Types in a Declaration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-parameter-names-in-declarations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing Parameter Names in Declarations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#location-of-function-declarations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Location of Function Declarations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declarations-of-standard-c-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Declarations of Standard C Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-making-a-function-declaration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Not Making a Function Declaration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Not Making a Function Declaration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-declaration-and-argument-parameter-compatibility-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Declaration and Argument-Parameter Compatibility Check
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-regarding-declaration-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Details Regarding Declaration Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locations-of-function-declarations-in-multi-file-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Locations of Function Declarations in Multi-File Projects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_type_conversions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Type Conversions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_loop_statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Loop Statements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16_ternary_operator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ternary Operator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17_preprocessor_directives__1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preprocessor Directives - 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18_switch_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Switch Statement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19_goto_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    goto Statement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20_random_number_generation_and_control_statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Random Number Generation and Control Statements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21_arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arrays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22_character_arrays_and_strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Character Arrays and Strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23_sizeof_operator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    sizeof Operator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div><h1 id="function-declarations-prototypes">Function Declarations (Prototypes)<a class="headerlink" href="#function-declarations-prototypes" title="Permanent link">#</a></h1>
+<p>The compilation process is performed by the compiler from top to bottom within the source code. During the compilation phase, when the compiler encounters a function call, it must know the <strong>return type</strong> of the called function. A function's return type determines which CPU register the return value will be retrieved from. Obtaining this information at compile time is essential for the program to run correctly.</p>
+<p>If the definition of the called function is placed <strong>before</strong> the calling function, the compiler already has information about the return type of the called function before it encounters the function call expression during the compilation process. This is because compilation is performed from top to bottom.</p>
+<p>Examine the following example:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kt">double</span><span class="w"> </span><span class="nf">get_val</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_val</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span><span class="w"> </span><span class="mf">7.3</span><span class="p">);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"d = %lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+In the example above, the <code>get_val</code> function is defined before the <code>main</code> function that calls it. Before reaching the call expression, the compiler already knows the return type of the <code>get_val</code> function.
+<p>If the definition of the called function is made <strong>after</strong> the calling function, the compiler cannot know the return type of the called function when it reaches the function call expression. This is a problematic situation:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="c1">// The return type of the function is unknown.</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_val</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span><span class="w"> </span><span class="mf">7.3</span><span class="p">);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"d = %lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="kt">double</span><span class="w"> </span><span class="nf">get_val</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Above, the <code>get_val</code> function is called within the <code>main</code> function. However, the definition of the <code>get_val</code> function is placed later in the source code than the <code>main</code> function. When the compiler encounters the call to the <code>get_val</code> function during compile time, it does not know the return type of this function.</p>
+<p>If a C compiler encounters a function call expression and has not yet obtained information about the function's return type, it <strong>assumes</strong> that the return value of the function in question is of type <code>int</code>.</p>
+<p>In the example above, the compiler assumes that the return value of the <code>get_val</code> function is of type <code>int</code> and generates code accordingly. Later, when the compilation flow reaches the function's definition, it sees that the function's return value is of type <code>double</code>. Compilers report this contradictory situation, which prevents target code generation, with an error message.</p>
+<blockquote>
+<p>[In C++, if the called function is not defined before the calling function, the function's return value is not assumed to be of type <code>int</code>. In this case, a function declaration is mandatory. A compile-time error occurs if this declaration is not made.]</p>
+</blockquote>
+<p>Defining the called function above the calling function is not always possible. Dozens of functions can be defined in a large source file. It may be the case that every defined function calls each other. In this case, it becomes very difficult to define the function to be called before the calling function. Furthermore, two functions can call each other in C. This corresponds to a <strong>recursive</strong> call mechanism. In such a function design, defining the called function first is no longer possible.
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kt">double</span><span class="w"> </span><span class="nf">func1</span><span class="p">()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="cm">/***/</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="n">func2</span><span class="p">();</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="cm">/***/</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="p">}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="kt">double</span><span class="w"> </span><span class="nf">func2</span><span class="p">()</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="p">{</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="cm">/***/</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="n">func1</span><span class="p">();</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="cm">/***/</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>No matter which of the function definitions above is placed higher, a contradictory situation will still occur.</p>
+<p>Moreover, the definitions of the called functions often do not reside in the same source file. In this case, how does the compiler receive information about the called function?</p>
+<h2 id="what-is-a-function-declaration">What is a Function Declaration?<a class="headerlink" href="#what-is-a-function-declaration" title="Permanent link">#</a></h2>
+<p>A <strong>function declaration</strong> (or function prototype) is a statement that provides information about a function to the compiler. The compiler generates the code related to the function call based on the information it receives from here. Additionally, the compiler can perform some checks with this information. It prevents possible mistakes by generating error or warning messages as a result of these checks.</p>
+<h3 id="general-form-of-function-declarations">General Form of Function Declarations<a class="headerlink" href="#general-form-of-function-declarations" title="Permanent link">#</a></h3>
+<p>The general form of a function declaration is as follows:</p>
+<div class="codehilite"><pre><span></span><code>[return_type] &lt;function_name&gt; ([type1], [type2].....);
+</code></pre></div>
+
+<p>For example, the declaration for the <code>get_val</code> function can be made in the following form:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">get_val</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+The compiler obtains the following information from such a declaration:
+<ol>
+<li>The return value of the <code>get_val</code> function is of type <code>double</code>. After this information, the compiler no longer assumes the return value to be of type <code>int</code> if this function is called; it generates code based on obtaining a <code>double</code> return value.</li>
+<li>The <code>get_val</code> function has two parameters. After this notification, the compiler has the opportunity to check whether this function is called with the correct number of arguments. If it sees that the function is called with the wrong number of arguments, it reports the situation with an error message.</li>
+<li>The parameters of the <code>get_val</code> function are of type <code>double</code>. After this information, the compiler applies automatic type conversion to the arguments if arguments of other types are sent to the function. This topic will be covered in the section named "Automatic Type Conversion."</li>
+</ol>
+<p>Example declarations are given below:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">multiply</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kt">double</span><span class="w"> </span><span class="nf">power</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">clrscr</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+Just as in function definitions, if the function's return value is not specified in function declarations, the compiler assumes that the declaration is made for an <code>int</code> return value:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="w">    </span><span class="n">func</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+is completely equivalent to:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+However, it is better for readability to explicitly write the <code>int</code> keyword.
+<blockquote>
+<p>[In C++, the return type must be written.]</p>
+</blockquote>
+<p>If the declared function does not produce a return value, the <strong><code>void</code></strong> keyword must be used:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+Function declarations only provide information to the compiler. This is not a <strong>definition</strong> operation. Therefore, the compiler does not allocate memory for the program's runtime as a result of the declaration.
+<h3 id="omitting-parameter-types-in-a-declaration">Omitting Parameter Types in a Declaration<a class="headerlink" href="#omitting-parameter-types-in-a-declaration" title="Permanent link">#</a></h3>
+<p>Before the standardization process of C, the parameter parenthesis was often left empty in function declarations. No information was given about the types and number of the function's parameters in the declaration. The sole purpose of the declaration was to inform about the function's return value type. Therefore, a declaration like:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">func</span><span class="p">();</span>
+</code></pre></div></td></tr></table></div>
+did not mean that the <code>func</code> function had no parameters. With the addition made to function declarations during the standardization process, the possibility was given to provide information about the number and types of the function's parameters. However, this raised a problem. If code written according to old rules was compiled according to new rules, and a declaration like <code>double func();</code> was interpreted as the function having no parameters, a syntax error would occur if the declared function was called as, for example, <code>func(5)</code>. To ensure backward compatibility, a decision was made: If the function has no parameters, the <code>void</code> keyword must be written inside the parameter parenthesis in the declaration. Examine the following declarations:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">foo</span><span class="p">();</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+According to the standards, the compiler concludes from the declaration of the <code>foo</code> function that no information has been given about the <code>foo</code> function's parameters, and when it encounters a function call, it does not check the number of arguments sent to the function. That is, a function declared this way can be called with the desired number of arguments in compliance with the rules.
+<p>From the declaration of the <code>func</code> function, the compiler concludes that the <code>func</code> function has no parameters, and if it encounters one or more arguments sent to the function when it encounters a function call, it determines this as a compile-time error.</p>
+<blockquote>
+<p>[In C++, both declarations are equivalent. That is, there is no difference between leaving the parameter parenthesis empty and writing the <code>void</code> keyword in a function declaration.]</p>
+</blockquote>
+<h3 id="writing-parameter-names-in-declarations">Writing Parameter Names in Declarations<a class="headerlink" href="#writing-parameter-names-in-declarations" title="Permanent link">#</a></h3>
+<p>In function declarations, the names of the parameters can also be written after their types. The scopes of the parameter names included in declarations are limited only to the declaration's parameter parenthesis. Standards defined this situation with a separate scope rule. Names used inside the function declaration parenthesis are only known within that parenthesis. These names are not known when exiting this parenthesis. This scope rule is called the <strong>"Function Prototype Scope"</strong> rule.</p>
+<p>The parameter names written here are only useful for readability. There is no requirement for these parameter names to be the same as the parameter names used in the function's definition.</p>
+<p>Let's rewrite the declarations above by giving names to the parameters:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">multiply</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">number2</span><span class="p">);</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">pow</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">exp</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+Those who read only the function declarations without seeing the function definitions get an idea of what information these variables expect from function calls based on the parameter names used in the declarations.
+<h3 id="location-of-function-declarations">Location of Function Declarations<a class="headerlink" href="#location-of-function-declarations" title="Permanent link">#</a></h3>
+<p>A function's declaration can be made anywhere in the program. If declarations are made at the <strong>global level</strong>, meaning outside all blocks, they remain valid within the area from where they are declared until the end of the file. The function's declaration must be made before the function in question is called.</p>
+<p>However, although rarely encountered in applications, function declarations can also be made at the <strong>local level</strong>. In this case, information is given only to the block where the declaration was made. In other words, a function declaration, like variable definitions, adheres to the scope rule.</p>
+<p>Generally, function declarations are made at the top of the program or inside one of the header files defined by the programmer. <strong>Header files</strong> will be discussed in detail later.</p>
+<h3 id="declarations-of-standard-c-functions">Declarations of Standard C Functions<a class="headerlink" href="#declarations-of-standard-c-functions" title="Permanent link">#</a></h3>
+<p>The declarations of standard C functions are placed inside standard header files. In applications, the programmer does not write the declaration of a standard C function himself; he includes the header file containing this declaration in his source code using the <strong><code>#include</code></strong> preprocessor command.</p>
+<hr>
+<h2 id="not-making-a-function-declaration">Not Making a Function Declaration<a class="headerlink" href="#not-making-a-function-declaration" title="Permanent link">#</a></h2>
+<p>There is no requirement for the source code of a called function to be in the same source file. When the compiler encounters a function call, it does not search for the source code of the called function. It writes information indicating that the relevant function has been called into the generated object file for the linker. Finding the compiled code of the called function and combining the object files appropriately is the job of the <strong>linker</strong> program.</p>
+<p>Suppose the definition of a called function is not in the same source file. What happens if the declaration of the called function is not made? In the C language, this is <strong>not a syntax error</strong>.</p>
+<blockquote>
+<p>[In C++, this situation is directly a syntax error. The compiler must see the definition or declaration of a function before the function in question is called.]</p>
+</blockquote>
+<p>In the C language, the compiler produces the object file by assuming the return value of an undeclared function is of type <code>int</code>. If the function's return value is not used in the source code, or if the return value of the called function is indeed of type <code>int</code>, no problem arises. However, if the function's return value is used and the return value is not of type <code>int</code>, a <strong>runtime error</strong> is in question. Compile and run the following example on your compiler:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span>
+<span class="normal"><a href="#__codelineno-11-6">6</a></span>
+<span class="normal"><a href="#__codelineno-11-7">7</a></span>
+<span class="normal"><a href="#__codelineno-11-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="p">{</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">    </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="mf">9.</span><span class="p">);</span><span class="w"> </span><span class="c1">// sqrt is defined in math.h, but math.h is not included.</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"d = %lf</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>No error occurs during the compilation of the program above. However, the compiler generates code assuming the return value of the called <code>sqrt</code> function is of type <code>int</code>. In fact, the return value of the compiled <code>sqrt</code> function is of type <code>double</code>. During runtime, instead of the <code>double</code> value returned by the function, an <code>int</code> value is attempted to be pulled as a result of the code produced by the compiler. This is a program runtime error.</p>
+<p>Now, compile and run the program again by adding the following declaration before the <code>main</code> function:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+The declarations of standard C functions are in header files with the <code>.h</code> extension. By including the relevant header file in the source code with the <strong><code>#include</code></strong> preprocessor command, the standard C functions are actually declared. Indeed, when the source program, which is the output of the preprocessor program, is given to the compiler, the declaration of the function is found in this included file. Undoubtedly, instead of including the relevant header file in the source code, the declarations of standard C functions can also be made by the programmer. In this case, no error will occur either. In the example above, the declaration of the called <code>sqrt</code> function can be added to the source code in two ways:
+<p>i. By including the header file containing the function declaration in the source code with a preprocessor command:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+</code></pre></div></td></tr></table></div>
+ii. The function's declaration can be written directly:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+However, the preferred method should be to include the header file in the source code. This is because the programmer might write the function's declaration incorrectly.
+<p>The reason for including header files in the source code is not only function declarations. Header files also contain other declarations: Macros, symbolic constants, type name declarations, structure declarations, etc.</p>
+<h3 id="function-declaration-and-argument-parameter-compatibility-check">Function Declaration and Argument-Parameter Compatibility Check<a class="headerlink" href="#function-declaration-and-argument-parameter-compatibility-check" title="Permanent link">#</a></h3>
+<p>The main purpose of function declarations, as stated above, is to inform the compiler about the function's return type. However, if the types of the function's parameters are specified in the function declarations (prototype), the compiler compares the number of parameters in the prototype declaration with the number of arguments sent to the function in the function call expression. For example:</p>
+<p>If a declaration like:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="nf">process</span><span class="p">(</span><span class="kt">float</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+is written, a compile-time error occurs if the <code>process</code> function is called with too few or too many arguments.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">process</span><span class="p">(</span><span class="mf">5.8</span><span class="p">);</span><span class="w">               </span><span class="cm">/* Invalid! Call with insufficient argument */</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">process</span><span class="p">(</span><span class="mf">4.6</span><span class="p">,</span><span class="w"> </span><span class="mf">7.9</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">)</span><span class="w">      </span><span class="cm">/* Invalid! Call with excessive arguments */</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="details-regarding-declaration-syntax">Details Regarding Declaration Syntax<a class="headerlink" href="#details-regarding-declaration-syntax" title="Permanent link">#</a></h3>
+<p>The declarations of functions with the same return type can be written separated by commas, but such a declaration form is generally not preferred by programmers.
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">func1</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="w"> </span><span class="n">func2</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">),</span><span class="w"> </span><span class="n">func3</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+The declaration above is valid. With such a declaration, the compiler is informed that the return value of all functions <code>func1</code>, <code>func2</code>, and <code>func3</code> is of type <code>double</code>.
+<p>Function declarations can also be combined with variable definitions. This is also not preferred for readability.
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="nf">func1</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">func2</span><span class="p">(</span><span class="kt">void</span><span class="p">),</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+With the declaration statement above, the declarations of <code>func1</code> and <code>func2</code> are made, while the variables <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> are defined.
+<p>Making a function declaration does not necessitate defining or calling that function. Not defining a declared function does not cause an error.</p>
+<p>A function's declaration can be made multiple times. This does not cause a compile-time error. However, the declarations made must <strong>not contradict</strong> each other.</p>
+<p>Suppose declarations for the same function are made in different places in the source file, in the following forms:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span>
+<span class="normal"><a href="#__codelineno-19-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">func</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="n">func</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="n">func</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">number1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">number2</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>There is no contradiction in any of the declarations above. Using different names for the function parameters in subsequent declarations does not create a contradiction because the scope of these names is only within the parenthesis where the declaration is made. However, the following different declarations are invalid:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span>
+<span class="normal"><a href="#__codelineno-20-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="kt">double</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="kt">double</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Invalid! Conflict in parameter type */</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="kt">long</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="n">sample</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="cm">/* Invalid! Return type conflict (assumed int vs declared long) */</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="locations-of-function-declarations-in-multi-file-projects">Locations of Function Declarations in Multi-File Projects<a class="headerlink" href="#locations-of-function-declarations-in-multi-file-projects" title="Permanent link">#</a></h3>
+<p>In C and C++ languages, a project often consists of more than one source file, i.e., modules. In most source files, functions defined in other source files are called. That is, there is often a service-client relationship between source files. A module that will serve other modules is written as two separate files. One of the files is the implementation file, which has the <code>.c</code> extension. Declarations regarding the services provided by this file to other modules are placed in another file with the <code>.h</code> extension. This file is called a <strong>header file</strong>. Declarations of functions that will serve other modules should be placed inside the header file.</p>
+<p>The client source file includes the content of the server module's header file in its own file using the <strong><code>#include</code></strong> preprocessor command. Thus, the declaration is made. This situation will be revisited in the section on "Preprocessor Commands."</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../12_if_statement/" class="md-footer__link md-footer__link--prev" aria-label="Previous: If Statement">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                If Statement
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../14_type_conversions/" class="md-footer__link md-footer__link--next" aria-label="Next: Type Conversions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Type Conversions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.highlight", "search.share", "content.tabs.link", "toc.integrate", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

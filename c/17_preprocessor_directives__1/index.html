@@ -1,0 +1,1699 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Burak Rustemogullari">
+      
+      
+        <link rel="canonical" href="https://burakrstem.github.io/docs/c/17_preprocessor_directives__1/">
+      
+      
+        <link rel="prev" href="../16_ternary_operator/">
+      
+      
+        <link rel="next" href="../18_switch_statement/">
+      
+      
+      <link rel="icon" href="../../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Preprocessor Directives - 1 - Burak's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#preprocessor-directives-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Burak&#39;s Notes" class="md-header__button md-logo" aria-label="Burak's Notes" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Burak's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Preprocessor Directives - 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../1_programming_and_c/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  C
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Burak&#39;s Notes" class="md-nav__button md-logo" aria-label="Burak's Notes" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Burak's Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_programming_and_c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programming and C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_number_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Number Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_general_concepts_and_terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General Concepts and Terms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_creating_a_c_program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creating a C Program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6_declarations_and_definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Declarations and Definitions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7_constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Constants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8_operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_scope_and_lifetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scope and Lifetime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_control_statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control Statements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_if_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    If Statement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_function_declarations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Declarations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_type_conversions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Type Conversions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_loop_statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Loop Statements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16_ternary_operator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ternary Operator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Preprocessor Directives - 1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preprocessor Directives - 1
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-include-preprocessor-directive" class="md-nav__link">
+    <span class="md-ellipsis">
+      The #include Preprocessor Directive
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The #include Preprocessor Directive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-are-header-files-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why are Header Files Used?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-define-preprocessor-directive" class="md-nav__link">
+    <span class="md-ellipsis">
+      The #define Preprocessor Directive
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The #define Preprocessor Directive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symbolic-constants-make-code-more-readable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symbolic Constants Make Code More Readable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-types-with-symbolic-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Naming Types with Symbolic Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions-returning-with-symbolic-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions Returning with Symbolic Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calling-functions-with-symbolic-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calling Functions with Symbolic Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flag-variables-taking-their-values-with-symbolic-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flag Variables Taking Their Values with Symbolic Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifying-the-program-via-symbolic-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modifying the Program via Symbolic Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbolic-constants-used-instead-of-floating-point-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symbolic Constants Used Instead of Floating-Point Literals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbolic-constants-defined-for-portability-purposes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symbolic Constants Defined for Portability Purposes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#locations-of-symbolic-constant-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Locations of Symbolic Constant Definitions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-mistakes-in-using-symbolic-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes in Using Symbolic Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-macros-for-standard-c-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simple Macros for Standard C Operators
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18_switch_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Switch Statement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19_goto_statement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    goto Statement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20_random_number_generation_and_control_statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Random Number Generation and Control Statements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21_arrays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arrays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22_character_arrays_and_strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Character Arrays and Strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23_sizeof_operator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    sizeof Operator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div><h1 id="preprocessor-directives-1">Preprocessor Directives (1)<a class="headerlink" href="#preprocessor-directives-1" title="Permanent link">#</a></h1>
+<p>C compilers consist of two separate modules:</p>
+<ol>
+<li><strong>Preprocessor Module</strong></li>
+<li><strong>Compilation Module</strong></li>
+</ol>
+<p>The preprocessor has nothing to do with the computer's processor or any other hardware component. The preprocessor is a software program that performs a specific task.</p>
+<p>The preprocessor is a preliminary program that performs certain arrangements and changes on the source file. The preprocessor program has an input and an output. The input of the preprocessor is the source file itself. The output of the preprocessor program forms the input of the compilation module. That is, the source program is first processed by the preprocessor. The preprocessor module performs various textual arrangements and changes in the source file. Then, this modified or arranged source file is converted into object code by the compilation module.</p>
+<p>In the C programming language, all lines starting with <strong><code>#</code></strong> are <strong>directives</strong> given to the preprocessor program.</p>
+<p>The preprocessor program can perform operations from a predetermined set of commands. Each command is identified by a word following the <code>#</code> token. Below is a list of all preprocessor directives:</p>
+<ul>
+<li><code>#include</code></li>
+<li><code>#define</code></li>
+<li><code>#if</code></li>
+<li><code>#else</code></li>
+<li><code>#elif</code></li>
+<li><code>#ifdef</code></li>
+<li><code>#ifndef</code></li>
+<li><code>#endif</code></li>
+<li><code>#undef</code></li>
+<li><code>#line</code></li>
+<li><code>#error</code></li>
+<li><code>#pragma</code></li>
+</ul>
+<p>The words above that define the preprocessor directives are <strong>not</strong> C language keywords. By the time it is the compiler's turn, they have been deleted from the source file by the preprocessor. For example, a variable named <code>include</code> can be defined if desired, but it can be said that this is not a good idea in terms of readability. The words specifying the preprocessor directives only gain special meaning when they follow the <code>#</code> character.</p>
+<p>The preprocessor program does not perform any task aimed at generating object code; it performs some textual arrangements within the source code. After performing the directives given to it, it deletes the lines starting with <code>#</code> from the source file. The program entering the compilation module no longer contains lines starting with <code>#</code>.</p>
+<p>For now, you will only see the <code>#include</code> and <code>#define</code> directives. The remaining preprocessor directives will be covered in detail later.</p>
+<h2 id="the-include-preprocessor-directive">The <code>#include</code> Preprocessor Directive<a class="headerlink" href="#the-include-preprocessor-directive" title="Permanent link">#</a></h2>
+<p>The general syntax of the <code>#include</code> preprocessor directive is as follows:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;file name&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1">// or</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"file name"</span>
+</code></pre></div></td></tr></table></div>
+With the <code>#include</code> directive, the content of the file whose name is given is <strong>pasted</strong> into the place where this directive is written. With this directive, the preprocessor reads the specified file from the disk and places it where the directive is written. The job done with this directive can be likened to the <strong>"copy – paste"</strong> operation in text editor programs.
+<p>The file name to be included in the source file with the <code>#include</code> preprocessor directive can be specified in two separate ways:</p>
+<ol>
+<li><strong>In angle brackets:</strong><ul>
+<li><code>#include &lt;stdio.h&gt;</code></li>
+<li><code>#include &lt;time.h&gt;</code></li>
+</ul>
+</li>
+<li><strong>In double quotes:</strong><ul>
+<li><code>#include "general.h"</code></li>
+<li><code>#include "genetic.h"</code></li>
+</ul>
+</li>
+</ol>
+<p>If the file name is given in angle brackets, the file in question is searched for by the preprocessor only within a <strong>predefined directory</strong>. This predefined directory may vary depending on the compiler used and the system setup. For example:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="w">    </span><span class="err">\</span><span class="n">tc</span><span class="err">\</span><span class="n">include</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="err">\</span><span class="n">borland</span><span class="err">\</span><span class="n">include</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="err">\</span><span class="n">c600</span><span class="err">\</span><span class="n">include</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="c1">// and similarly for UNIX systems:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span>
+</code></pre></div></td></tr></table></div>
+Standard header files are included in the source code within angle brackets.
+<p>In most systems, when the file name is written within double quotes, the preprocessor first searches for the relevant file in the <strong>current directory</strong>. If it is not found there, it searches in the system-defined directory. For example, let's assume we are working in the directory:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="w">    </span><span class="nl">C</span><span class="p">:</span><span class="err">\</span><span class="n">sample</span>
+</code></pre></div></td></tr></table></div>
+With the directive <code>#include "strfunc.h"</code>, the preprocessor first searches for the file <code>strfunc.h</code> in the <code>C:\sample</code> directory. If it cannot find it there, it searches in the system-defined directory. Header files created by programmers themselves are usually included in the source code within double quotes, as they are not located in the system's directory.
+<p>The file name to be included in the source code with the <code>#include</code> preprocessor directive can also include the <strong>file path</strong>:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys\stat.h&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">"c:\headers\myheader.h"</span>
+</code></pre></div></td></tr></table></div>
+The <code>#include</code> directive can be found anywhere in the source program. However, the best place for files containing various declarations, such as standard header files, is undoubtedly at the <strong>very top of the program</strong>.
+<p>The <code>#include</code> directive can also be found in a <strong>nested</strong> form. For example, the following method can be used to include a large number of files in the source code:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><code>main.c</code></th>
+<th style="text-align: left;"><code>project.h</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>#include "project.h"</code></td>
+<td style="text-align: left;"><code>#include &lt;stdio.h&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>int main()</code></td>
+<td style="text-align: left;"><code>#include &lt;conio.h&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>{ /*...*/ }</code></td>
+<td style="text-align: left;"><code>#include &lt;stdlib.h&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>#include &lt;time.h&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Only the <code>project.h</code> file is included in the <code>main.c</code> file. After the preprocessor includes this file in the source code, it continues from this file.</p>
+<h3 id="why-are-header-files-used">Why are Header Files Used?<a class="headerlink" href="#why-are-header-files-used" title="Permanent link">#</a></h3>
+<p>Especially large programs are written in separate parts called modules. The purpose of some of these modules is to provide services to other modules. In C and C++ languages, general service codes (<strong>server codes</strong>) are generally written as two separate files. Function definitions and global variable definitions are located in the file with the <strong><code>.c</code></strong> extension. This file is called the <strong>implementation file</strong>. Declarations concerning the codes that will receive the service (<strong>client codes</strong>) are kept in another file. This file is called the <strong>header file</strong>. A header file is the <strong>interface</strong> of a module. The module establishes its relationship with the outside world through its interface.</p>
+<p>User codes that will benefit from the provided services do not see the service-providing codes themselves, only their interface. Client codes are written dependent on the interfaces of the server codes. Thus, the server codes themselves and their interfaces are clearly separated from each other.</p>
+<p>What are the benefits of separating the definitions of the server codes from their interfaces?</p>
+<p>User codes, i.e., client codes, are written dependent on the function interfaces, not their definitions. The following benefits can be obtained from this:</p>
+<ol>
+<li>Those who write the server codes can make changes to the definition codes, provided they stick to the same interface. In this case, no changes are required in the client codes.</li>
+<li>The programmer writing the user codes performs easier abstraction because they do not have to know the implementation details of the server codes.</li>
+<li>The project development time is shortened if more than one programmer works on the same project.</li>
+</ol>
+<h2 id="the-define-preprocessor-directive">The <code>#define</code> Preprocessor Directive<a class="headerlink" href="#the-define-preprocessor-directive" title="Permanent link">#</a></h2>
+<p>The function of the <code>#define</code> preprocessor directive can be likened to the <strong>"find - replace"</strong> feature in text editor programs. This directive is used to replace a text in the source code with another text.</p>
+<p>The preprocessor obtains the first non-space sequence of characters after skipping the spaces following the <code>define</code> word. Let's call this sequence <strong>STR1</strong>. Then, the entire sequence of characters until the end of the line is obtained. Let's call this <strong>STR2</strong>. The preprocessor places the text <strong>STR2</strong> instead of the text <strong>STR1</strong> in the source code:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">#define SIZE 100</span>
+</code></pre></div></td></tr></table></div>
+With the preprocessor directive, the preprocessor replaces every <code>SIZE</code> token it sees in the source code with the token <code>100</code>. The <code>SIZE</code> token is no longer present in the source program entering the compilation module.
+<p>The <code>#define</code> preprocessor directive is most often used to replace a name with a numerical value. A name replaced by a numerical value is called a <strong>"symbolic constant."</strong> Symbolic constants are not objects. In the source code entering the compilation module, symbolic constants are replaced by numerical expressions.</p>
+<p>Names defined with the <code>#define</code> preprocessor directive are also called <strong>"simple macros."</strong></p>
+<p>Symbolic constants are conventionally named with <strong>uppercase letters</strong>. This allows the reader of the code to distinguish between variables and symbolic constants. As is known, predominantly lowercase letters are used for variable naming in the C language.</p>
+<p>A symbolic constant can be used in the definition of another symbolic constant. For example:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">#define MAX 100</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="cp">#define MIN (MAX - 50)</span>
+</code></pre></div></td></tr></table></div>
+The replacement operation is performed if <strong>STR1</strong> is found as a <strong>token</strong> in the source code:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">#define SIZE 100</span>
+</code></pre></div></td></tr></table></div>
+Assume that the source code contains statements such as:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MAX_SIZE</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">printf</span><span class="p">(</span><span class="s">"SIZE = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+The preprocessor does not make any changes to these statements.
+<p>In the expression <code>size = MAX_SIZE</code>, <code>SIZE</code> is not a separate token; the token is <code>MAX_SIZE</code>. Since the replacement is case-sensitive, the name <code>size</code> in the source code is also not the token to be replaced.</p>
+<p>In the expression <code>printf("SIZE = %d\n", max_size)</code>, the token is the string literal. That is, <code>SIZE</code> inside the string literal is not a separate token on its own.</p>
+<p>The <code>#define</code> preprocessor directive cannot be used to perform a replacement operation for literals and operators. The following <code>#define</code> preprocessor directives are invalid:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">#define + -</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="cp">#define 100 200</span>
+</code></pre></div></td></tr></table></div>
+Symbolic constants must be named according to the C language's variable naming rules:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="cp">#define BÜYÜK 10 </span><span class="c1">// Invalid in standard C/English environment</span>
+</code></pre></div></td></tr></table></div>
+The preprocessor program also executes the preprocessor directives inside the file included in the source code with the <code>#include</code> directive. In this case, when a file containing symbolic constant definitions is included in the source code with the <code>#include</code> directive, these symbolic constants become valid as if they were defined within the source code.
+<p>Strings can also be used in the <code>#define</code> preprocessor directive:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="cp">#define ERROR_MESSAGE "FILE CANNOT BE OPENED \n"</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="cm">/***/</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">printf</span><span class="p">(</span><span class="n">HATA_MESAJI</span><span class="p">);</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="cm">/***/</span>
+</code></pre></div></td></tr></table></div>
+If the string to be used in the symbolic constant definition is long, it can be placed on multiple lines to facilitate code readability. In this case, the <code>\</code> token must be placed at the end of all lines except the last one.
+<p>For readability, all symbolic constant definitions should be written consecutively one below the other. The chosen symbolic constant names should give the person reading the code an idea of their purpose.</p>
+<p>Defining a symbolic constant does not necessitate the existence of information that can be replaced in the source code. Not using a defined symbolic constant in the source code does not lead to any errors.</p>
+<h3 id="symbolic-constants-make-code-more-readable">Symbolic Constants Make Code More Readable<a class="headerlink" href="#symbolic-constants-make-code-more-readable" title="Permanent link">#</a></h3>
+<p>Symbolic constants increase the readability and comprehensibility of the written code. Giving names to some literals can provide more information about the purpose for which these literals are used. Let's look at the example below:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span>
+<span class="normal"><a href="#__codelineno-11-6">6</a></span>
+<span class="normal"><a href="#__codelineno-11-7">7</a></span>
+<span class="normal"><a href="#__codelineno-11-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="cp">#define PERSONNEL_COUNT 750</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">()</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="p">{</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">    </span><span class="cm">/***/</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PERSONNEL_SAYISI</span><span class="p">)</span><span class="w"> </span><span class="c1">// PERSONNEL_SAYISI is PERSONEL_SAYISI in Turkish text</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">    </span><span class="cm">/***/</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+If the literal value 750 had been used directly instead of the <code>PERSONNEL_COUNT</code> symbolic constant in the source code, it would be much more difficult for the reader of the code to deduce what this literal means, wouldn't it?
+<h3 id="naming-types-with-symbolic-constants">Naming Types with Symbolic Constants<a class="headerlink" href="#naming-types-with-symbolic-constants" title="Permanent link">#</a></h3>
+<p>The <code>#define</code> preprocessor directive can also be used to give names to C's native data types:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="cp">#define BYTE char</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="cp">#define BOOL int</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="n">BYTE</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="n">BYTE</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="n">BOOL</span><span class="w"> </span><span class="nf">isprime</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+You know that the <code>char</code> type is actually a 1-byte integer type. The use of the name <code>char</code> often gives the impression that a task related to text or characters is being performed. However, functions that perform general operations on memory blocks also often use the <code>char</code> type. In this case, a name like <code>BYTE</code> can be used to give more idea about the operation being performed. You recall that the <code>BOOL</code> type does not exist in C (historically). The <code>int</code> type is used as a logical data type instead of the <code>bool</code> data type in C. However, the name <code>BOOL</code> can be used with the <code>#define</code> preprocessor directive to increase program readability.
+<p>We will later address the <strong><code>typedef</code></strong> keyword and the definition of new type names as an alternative to this usage.</p>
+<h3 id="functions-returning-with-symbolic-constants">Functions Returning with Symbolic Constants<a class="headerlink" href="#functions-returning-with-symbolic-constants" title="Permanent link">#</a></h3>
+<p>Another usage aimed at increasing readability is for the return values of functions. You know that the return values of some functions answer a question, and the return values of some functions give an idea about the success of an operation. Such functions can be better in terms of readability if they use symbolic constants instead of return value expressions:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">return</span><span class="w"> </span><span class="n">VALID</span><span class="p">;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="k">return</span><span class="w"> </span><span class="n">INVALID</span><span class="p">;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="k">return</span><span class="w"> </span><span class="n">TRUE</span><span class="p">;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="k">return</span><span class="w"> </span><span class="n">FALSE</span><span class="p">;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="k">return</span><span class="w"> </span><span class="n">FAILED</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+and so on.
+<h3 id="calling-functions-with-symbolic-constants">Calling Functions with Symbolic Constants<a class="headerlink" href="#calling-functions-with-symbolic-constants" title="Permanent link">#</a></h3>
+<p>Symbolic constants are also sent to some functions by the calling code snippet.</p>
+<p>Some symbolic constants are also defined for this purpose in C's standard header files. For example, in the <code>stdlib.h</code> header file, there are definitions in the form:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="cp">#define EXIT_FAILURE 1</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="cp">#define EXIT_SUCCESS 0</span>
+</code></pre></div></td></tr></table></div>
+That is, if the <code>stdlib.h</code> header file is included in the source code, the <code>EXIT_FAILURE</code> symbolic constant can be used instead of 1, and the <code>EXIT_SUCCESS</code> symbolic constant can be used instead of 0. These symbolic constants are used in calls to the standard <code>exit</code> function:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+In the <code>stdio.h</code> header file, three symbolic constants are defined for the purpose of being sent as arguments to the standard <code>fseek</code> function:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="cp">#define SEEK_SET 0</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="cp">#define SEEK_CUR 1</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="cp">#define SEEK_END 2</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="flag-variables-taking-their-values-with-symbolic-constants">Flag Variables Taking Their Values with Symbolic Constants<a class="headerlink" href="#flag-variables-taking-their-values-with-symbolic-constants" title="Permanent link">#</a></h3>
+<p>In C programs, flag variables also often take their values with symbolic constants:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">pos_flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ON</span><span class="p">;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">validity_flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">INVALID</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+The <code>case</code> expressions in the <code>switch</code> control statement are also often formed with symbolic constants. We will examine this topic in the <code>switch</code> control statement section.
+<h3 id="modifying-the-program-via-symbolic-constants">Modifying the Program via Symbolic Constants<a class="headerlink" href="#modifying-the-program-via-symbolic-constants" title="Permanent link">#</a></h3>
+<p>In situations where a literal is used in many places within the program, a replacement operation for this literal can be done from a single location. Thus, the program in question can be written dependent on a symbolic constant, and then recompiled and run for different parametric values by changing the symbolic constant. For example, let's assume we are writing a game program based on the user guessing a number with a specific number of guesses. Let the player have 10 guesses. In this case, the value 10 is used in many places in the source code, right? Suppose it is later desired to increase the player's number of guesses to 20 in the game program. The literals 10, which represent the player's number of guesses, must be changed to 20 in the source code. Performing this replacement operation individually by the programmer is both difficult and error-prone. Not every literal 10 used in the source code may represent the player's guess limit. However, if a symbolic constant is defined instead of the value representing the player's limit:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="cp">#define NO_OF_GUESS 10</span>
+</code></pre></div></td></tr></table></div>
+and the program is written using this symbolic constant, the values 10 throughout the entire program can be easily converted to the value 20 by making a change in this symbolic constant definition.
+<h3 id="symbolic-constants-used-instead-of-floating-point-literals">Symbolic Constants Used Instead of Floating-Point Literals<a class="headerlink" href="#symbolic-constants-used-instead-of-floating-point-literals" title="Permanent link">#</a></h3>
+<p>The use of symbolic constants prevents possible inconsistencies and typographical errors, especially when using floating-point literals.</p>
+<p>For example, let's assume that the number <span class="arithmatex">\(\pi\)</span> is frequently used in a program that performs mathematical calculations. The symbolic constant:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="cp">#define PI 3.14159</span>
+</code></pre></div></td></tr></table></div>
+can be used instead of the number <span class="arithmatex">\(\pi\)</span>. If the number <span class="arithmatex">\(\pi\)</span> is written as a literal each time, the same value may not be written each time. For example, while the literal <span class="arithmatex">\(3.14159\)</span> is written in one place in the source code, a value like <span class="arithmatex">\(3.15159\)</span> might be accidentally written at another point in the source code. The compiler program has no mechanism to issue a logical warning message for such inconsistencies. The use of symbolic constants eliminates such errors.
+<p>Most compilers also define many mathematical constants in the <code>math.h</code> header file.</p>
+<h3 id="symbolic-constants-defined-for-portability-purposes">Symbolic Constants Defined for Portability Purposes<a class="headerlink" href="#symbolic-constants-defined-for-portability-purposes" title="Permanent link">#</a></h3>
+<p>Some symbolic constants are defined both to provide portability and to create a common interface. Standard symbolic constants carrying the boundary values of the integer types used on the system are defined in the <code>limits.h</code> standard header file:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Symbolic Constant</th>
+<th style="text-align: left;">Smallest/Largest Possible Value</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>CHAR_BIT</code></td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Number of bits in the <code>char</code> type</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SCHAR_MIN</code></td>
+<td style="text-align: left;">-127</td>
+<td style="text-align: left;">Smallest value of <code>signed char</code> type</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SCHAR_MAX</code></td>
+<td style="text-align: left;">127</td>
+<td style="text-align: left;">Largest value of <code>signed char</code> type</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>UCHAR_MAX</code></td>
+<td style="text-align: left;">255</td>
+<td style="text-align: left;">Largest value of <code>unsigned char</code> type</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SHRT_MIN</code></td>
+<td style="text-align: left;">-32,767</td>
+<td style="text-align: left;">Smallest value of <code>signed short int</code> type</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SHRT_MAX</code></td>
+<td style="text-align: left;">32,767</td>
+<td style="text-align: left;">Largest value of <code>signed short int</code> type</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>USHRT_MAX</code></td>
+<td style="text-align: left;">65,535</td>
+<td style="text-align: left;">Largest value of <code>unsigned short</code> type</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>INT_MIN</code></td>
+<td style="text-align: left;">-32,767 (varies)</td>
+<td style="text-align: left;">Smallest value of <code>signed int</code> type</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>INT_MAX</code></td>
+<td style="text-align: left;">32,767 (varies)</td>
+<td style="text-align: left;">Largest value of <code>signed int</code> type</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>UINT_MAX</code></td>
+<td style="text-align: left;">65,535 (varies)</td>
+<td style="text-align: left;">Largest value of <code>unsigned int</code> type</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LONG_MIN</code></td>
+<td style="text-align: left;">-2,147,483,648</td>
+<td style="text-align: left;">Smallest value of <code>signed long int</code> type</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LONG_MAX</code></td>
+<td style="text-align: left;">2,147,483,647</td>
+<td style="text-align: left;">Largest value of <code>signed long int</code> type</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ULONG_MAX</code></td>
+<td style="text-align: left;">4,294,967,295</td>
+<td style="text-align: left;">Largest value of <code>unsigned long int</code> type</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LLONG_MIN</code></td>
+<td style="text-align: left;">-9,233,372,036,854,775,808</td>
+<td style="text-align: left;">Smallest value of <code>signed long long int</code> type (C99)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LLONG_MAX</code></td>
+<td style="text-align: left;">9,233,372,036,854,775,807</td>
+<td style="text-align: left;">Largest value of <code>signed long long int</code> type (C99)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ULLONG_MAX</code></td>
+<td style="text-align: left;">18,446,744,073,709,551,615</td>
+<td style="text-align: left;">Largest value of <code>unsigned long long int</code> type (C99)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CHAR_MIN</code></td>
+<td style="text-align: left;"><code>SCHAR_MIN</code> or 0</td>
+<td style="text-align: left;">Smallest value of <code>char</code> type. If system's <code>char</code> is signed, value is <code>SCHAR_MIN</code>. If unsigned, value is 0.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CHAR_MAX</code></td>
+<td style="text-align: left;"><code>SCHAR_MAX</code> or <code>UCHAR_MAX</code></td>
+<td style="text-align: left;">Largest value of <code>char</code> type. If system's <code>char</code> is signed, value is <code>SCHAR_MAX</code>. If unsigned, value is <code>UCHAR_MAX</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>MB_LEN_MAX</code></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Maximum number of bytes a multi-byte character can have. (In locales where this type is supported)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="locations-of-symbolic-constant-definitions">Locations of Symbolic Constant Definitions<a class="headerlink" href="#locations-of-symbolic-constant-definitions" title="Permanent link">#</a></h3>
+<p>The <code>#define</code> directive can be used anywhere in the source code. However, it is effective in the region from where it is defined until the end of the source code. The preprocessor program does not have a concept of scope directly. A symbolic constant defined at the beginning of a block is effective not only within that block but everywhere from where it is defined until the end of the source code.</p>
+<p>Symbolic constants are sometimes defined inside the header file and sometimes inside the source file.</p>
+<h3 id="common-mistakes-in-using-symbolic-constants">Common Mistakes in Using Symbolic Constants<a class="headerlink" href="#common-mistakes-in-using-symbolic-constants" title="Permanent link">#</a></h3>
+<p>A typical mistake is using the equals sign (<code>=</code>) unnecessarily in the symbolic constant definition:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="cp">#define N = 100</span>
+</code></pre></div></td></tr></table></div>
+In this case, the preprocessor pastes the text:
+<div class="codehilite"><pre><span></span><code>= 100
+</code></pre></div>
+
+<p>where it sees <code>N</code>. For example, let's assume a definition like:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</code></pre></div></td></tr></table></div>
+is made. The preprocessor converts this definition to:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">];</span>
+</code></pre></div></td></tr></table></div>
+which is invalid.
+<p>Another typical mistake is accidentally terminating the <code>#define</code> preprocessor directive line with a semicolon (<code>;</code>):
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="cp">#define N 100;</span>
+</code></pre></div></td></tr></table></div>
+In this case, the preprocessor places:
+<div class="codehilite"><pre><span></span><code>100;
+</code></pre></div>
+
+<p>where it sees <code>N</code>. The definition:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</code></pre></div></td></tr></table></div>
+becomes:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">100</span><span class="p">;];</span>
+</code></pre></div></td></tr></table></div>
+This definition is invalid. In such errors, the compiler usually issues as many error messages as the symbolic constant is used.
+<p>Care must be taken when defining symbolic constants. It must be remembered that the preprocessor module does not perform any arithmetic operations, but only a textual replacement:
+</p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span>
+<span class="normal"><a href="#__codelineno-26-4">4</a></span>
+<span class="normal"><a href="#__codelineno-26-5">5</a></span>
+<span class="normal"><a href="#__codelineno-26-6">6</a></span>
+<span class="normal"><a href="#__codelineno-26-7">7</a></span>
+<span class="normal"><a href="#__codelineno-26-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="cp">#define MAX 10 + 20</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="p">{</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MAX</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+In the example above, the value 50 is assigned to the variable <code>result</code>, not 60. However, if the preprocessor directive had been written as:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="cp">#define MAX (10 + 20)</span>
+</code></pre></div></td></tr></table></div>
+the value 60 would have been assigned to the variable <code>result</code>.
+<h3 id="simple-macros-for-standard-c-operators">Simple Macros for Standard C Operators<a class="headerlink" href="#simple-macros-for-standard-c-operators" title="Permanent link">#</a></h3>
+<p>Since some character sets, such as ISO 646, in which the source text is written do not have the characters <code>&amp;</code>, <code>|</code>, and <code>^</code>, problems arise in writing some C operators.</p>
+<p>In the <code>iso646</code> header file, which was later added to the language by an addition to the C89 standards, simple macros that are converted to some standard C operators are defined. Below is a list of these macros:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Macro</th>
+<th style="text-align: left;">Replacement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>#define and</code></td>
+<td style="text-align: left;"><code>&amp;&amp;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>#define and_eq</code></td>
+<td style="text-align: left;"><code>&amp;=</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>#define bitand</code></td>
+<td style="text-align: left;"><code>&amp;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>#define bitor</code></td>
+<td style="text-align: left;"><code>|</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>#define compl</code></td>
+<td style="text-align: left;"><code>~</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>#define not</code></td>
+<td style="text-align: left;"><code>!</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>#define not_eq</code></td>
+<td style="text-align: left;"><code>!=</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>#define or</code></td>
+<td style="text-align: left;"><code>||</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>#define or_eq</code></td>
+<td style="text-align: left;"><code>|=</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>#define xor</code></td>
+<td style="text-align: left;"><code>^</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>#define xor_eq</code></td>
+<td style="text-align: left;"><code>^=</code></td>
+</tr>
+</tbody>
+</table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../16_ternary_operator/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ternary Operator">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Ternary Operator
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../18_switch_statement/" class="md-footer__link md-footer__link--next" aria-label="Next: Switch Statement">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Switch Statement
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.highlight", "search.share", "content.tabs.link", "toc.integrate", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
