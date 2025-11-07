@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://burakrstem.github.io/docs/c/2_number_systems/">
       
       
+        <link rel="prev" href="../1_programming_and_c/">
+      
+      
+        <link rel="next" href="../3_general_concepts_and_terms/">
       
       
       <link rel="icon" href="../../assets/images/logo.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Number Systems in C - Burak's Notes</title>
+        <title>Number Systems - Burak's Notes</title>
       
     
     
@@ -109,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Number Systems in C
+              Number Systems
             
           </span>
         </div>
@@ -207,7 +211,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../docs/index.md" class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -224,11 +228,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../docs/c/1_programming_and_c.md" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../1_programming_and_c/" class="md-tabs__link">
           
   
   
@@ -289,7 +295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/index.md" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -308,8 +314,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -335,21 +343,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -362,7 +371,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             C
@@ -376,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/1_programming_and_c.md" class="md-nav__link">
+      <a href="../1_programming_and_c/" class="md-nav__link">
         
   
   
@@ -396,10 +405,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../docs/c/2_number_systems.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Number Systems
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -410,6 +441,353 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction-to-number-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introduction to Number Systems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-bit-byte-and-other-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Bit, Byte, and Other Units
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Bit, Byte, and Other Units">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-capacity-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Capacity Units
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-capacity-of-basic-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Capacity of Basic Data Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-binary-decimal-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Binary ↔ Decimal Conversions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Binary ↔ Decimal Conversions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binary-decimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binary → Decimal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decimal-binary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decimal → Binary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binary-to-decimal-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binary to Decimal Conversion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-msd-and-lsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. MSD and LSD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-unsigned-and-signed-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Unsigned and Signed Numbers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Unsigned and Signed Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unsigned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unsigned
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ones-complement" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. One’s Complement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-twos-complement" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Two’s Complement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Two’s Complement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculating-ones-and-twos-complement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculating One's and Two's Complement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-representation-of-negative-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Representation of Negative Numbers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Representation of Negative Numbers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-number-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Number Overflow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Number Overflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undefined-behavior-signed-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Undefined Behavior (Signed Overflow)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-hexadecimal-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Hexadecimal System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-octal-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Octal System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-representation-of-real-numbers-in-memory-ieee-754" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Representation of Real Numbers in Memory (IEEE 754)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Representation of Real Numbers in Memory (IEEE 754)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-precision-32-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single Precision (32-bit)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-precision-64-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Double Precision (64-bit)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-ieee-754-special-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. IEEE 754 Special Cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional examples:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional examples:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ieee-754-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. IEEE 754 Inspection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-binary-to-decimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. binary to decimal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-decimal-to-binary" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. decimal to binary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-endianness-control-and-byte-order-swapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Endianness Control and Byte Order Swapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-interpreting-signedunsigned-integers-via-bit-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Interpreting Signed/Unsigned Integers via Bit Pattern
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -422,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/3_general_concepts_and_terms.md" class="md-nav__link">
+      <a href="../3_general_concepts_and_terms/" class="md-nav__link">
         
   
   
@@ -445,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/4_creating_a_c_program.md" class="md-nav__link">
+      <a href="../4_creating_a_c_program/" class="md-nav__link">
         
   
   
@@ -468,7 +846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/5_data_types.md" class="md-nav__link">
+      <a href="../5_data_types/" class="md-nav__link">
         
   
   
@@ -491,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/6_declarations_and_definitions.md" class="md-nav__link">
+      <a href="../6_declarations_and_definitions/" class="md-nav__link">
         
   
   
@@ -514,7 +892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/7_constants.md" class="md-nav__link">
+      <a href="../7_constants/" class="md-nav__link">
         
   
   
@@ -537,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/8_operators.md" class="md-nav__link">
+      <a href="../8_operators/" class="md-nav__link">
         
   
   
@@ -560,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/9_functions.md" class="md-nav__link">
+      <a href="../9_functions/" class="md-nav__link">
         
   
   
@@ -1775,6 +2153,44 @@ V = (-1)^S × 2^(E - 1023) × (1.F)</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../1_programming_and_c/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Programming and C">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Programming and C
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../3_general_concepts_and_terms/" class="md-footer__link md-footer__link--next" aria-label="Next: General Concepts and Terms">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                General Concepts and Terms
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

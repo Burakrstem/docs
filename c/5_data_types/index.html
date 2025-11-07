@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://burakrstem.github.io/docs/c/5_data_types/">
       
       
+        <link rel="prev" href="../4_creating_a_c_program/">
+      
+      
+        <link rel="next" href="../6_declarations_and_definitions/">
       
       
       <link rel="icon" href="../../assets/images/logo.png">
@@ -207,7 +211,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../docs/index.md" class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -224,11 +228,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../docs/c/1_programming_and_c.md" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../1_programming_and_c/" class="md-tabs__link">
           
   
   
@@ -289,7 +295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/index.md" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -308,8 +314,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -335,21 +343,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -362,7 +371,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             C
@@ -376,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/1_programming_and_c.md" class="md-nav__link">
+      <a href="../1_programming_and_c/" class="md-nav__link">
         
   
   
@@ -399,7 +408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/2_number_systems.md" class="md-nav__link">
+      <a href="../2_number_systems/" class="md-nav__link">
         
   
   
@@ -422,7 +431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/3_general_concepts_and_terms.md" class="md-nav__link">
+      <a href="../3_general_concepts_and_terms/" class="md-nav__link">
         
   
   
@@ -445,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/4_creating_a_c_program.md" class="md-nav__link">
+      <a href="../4_creating_a_c_program/" class="md-nav__link">
         
   
   
@@ -465,10 +474,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../docs/c/5_data_types.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Data Types
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -479,6 +510,257 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-a-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What is a Type?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-grouping-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Grouping Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-integer-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Integer Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Integer Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signed-and-unsigned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signed and Unsigned
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integer Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-floating-point-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Floating-Point Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Floating-Point Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ieee-754-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      IEEE 754 Standard
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-new-types-introduced-with-c99" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. New Types Introduced with C99
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ansi-c-portability-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. ANSI C Portability Rules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-processor-architecture-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Processor Architecture Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Processor Architecture Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-16-bit-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      In 16-bit systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-32-bit-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      In 32-bit systems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-performance-and-usage-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Performance and Usage Recommendations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional codes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional codes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-precision-and-speed-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. precision and speed test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-defining-a-portable-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Defining a Portable Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-same-bit-in-different-data-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. same bit in different data type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-for-your-computer-sizeof" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. for your computer sizeof
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-signed-unsigned" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. signed unsigned
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-float-and-double" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. float and double
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-ieee-754" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. IEEE 754
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-c99-bool-complex" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. C99 bool complex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-data-types-and-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. data types and performance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -491,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/6_declarations_and_definitions.md" class="md-nav__link">
+      <a href="../6_declarations_and_definitions/" class="md-nav__link">
         
   
   
@@ -514,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/7_constants.md" class="md-nav__link">
+      <a href="../7_constants/" class="md-nav__link">
         
   
   
@@ -537,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/8_operators.md" class="md-nav__link">
+      <a href="../8_operators/" class="md-nav__link">
         
   
   
@@ -560,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs/c/9_functions.md" class="md-nav__link">
+      <a href="../9_functions/" class="md-nav__link">
         
   
   
@@ -1325,6 +1607,44 @@ There are a total of 8 integer types (including signed and unsigned versions).</
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../4_creating_a_c_program/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Creating a C Program">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Creating a C Program
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../6_declarations_and_definitions/" class="md-footer__link md-footer__link--next" aria-label="Next: Declarations and Definitions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Declarations and Definitions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
